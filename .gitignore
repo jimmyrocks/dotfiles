@@ -1,2 +1,4 @@
 backups/*
 vim/bundle/*
+vim/autoload/*
+*.swp
