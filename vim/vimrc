@@ -44,7 +44,7 @@
     let g:solarized_visibility='low'
     "let g:solarized_termcolors=256
     set background=dark
-    colorscheme solarized
+    colorschem solarized
 " }
 " Unsorted {
     set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
