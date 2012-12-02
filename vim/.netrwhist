@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/jmcandrew'
-let g:netrw_dirhist_2='/home/jmcandrew/dotfiles'
-let g:netrw_dirhist_3='/home/jmcandrew/dotfiles/vim/bundle'
-let g:netrw_dirhist_4='/home/jmcandrew/dotfiles/vim/bundle/taglist'
-let g:netrw_dirhist_5='/home/jmcandrew'
-let g:netrw_dirhist_6='/home/jmcandrew/dotfiles'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/jmcandrew/Code/sample_app/app/views/static_pages'
