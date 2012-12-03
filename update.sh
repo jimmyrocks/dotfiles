@@ -3,4 +3,8 @@
 git pull && git submodule update --init --recursive
 
 curl -Sso ~/dotfiles/bash/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-sudo apt-get install exuberant-ctags
+
+OS_NAME=`uname -s`
+if [ "$OS_NAME" == "Linux" ]; then
+    sudo apt-get install exuberant-ctags
+fi
