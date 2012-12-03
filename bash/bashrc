@@ -9,8 +9,10 @@
             git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
         }
         PS1='\u@\h:\w\[\033[1;32m\]$(parse_git_branch "%s")\[\033[00m\]§ '
+        alias ls='ls -G'
     else
         PS1='\u@\h:\w$(__git_ps1 "\[\e[0;90m\][%s]\[\e[0m\]")§ ' # Show git branch in status
+        alias ls='ls --color'
     fi
 
 
@@ -42,7 +44,6 @@
     alias ll='ls -alF'
     alias la='ls -A'
     alias l='ls -CF'
-    alias ls='ls -G' #--color doesn't work on mac
 
     # Add an "alert" alias for long running commands.  Use like so:
     #   sleep 10; alert
