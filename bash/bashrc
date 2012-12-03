@@ -1,17 +1,21 @@
 # .bashrc file
 #
 # commandPrompt {
-    source ~/dotfiles/bash/git-completion.bash # Git tab completion
+    source ~/dotfiles/bash/scripts/git-completion.bash # Git tab completion
     [ -z "$PS1" ] && return # If not running interactively, don't do anything
+
+    # Determine if we're using Darwin or Linux, and set the color prompt accordingly
     OS_NAME=`uname -s`
     if [ "$OS_NAME" == "Darwin" ]; then
+        # Darwin / OSX Config
         function parse_git_branch () {
             git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
         }
-        PS1='\u@\h:\w\[\033[1;32m\]$(parse_git_branch "%s")\[\033[00m\]§ '
-        alias ls='ls -G'
+        PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]§ '
+        alias ls='ls -G' # Color LS uses -G on OSX
     else
-        PS1='\u@\h:\w$(__git_ps1 "\[\e[0;90m\][%s]\[\e[0m\]")§ ' # Show git branch in status
+        # Unix / Ubuntu Settings
+        PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
         alias ls='ls --color'
     fi
 
