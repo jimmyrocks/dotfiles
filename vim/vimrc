@@ -28,6 +28,15 @@
     set softtabstop=4
     set expandtab
     set backspace=indent,eol,start
+    set textwidth=79
+    set tabstop=8
+" }
+"
+" codeCompletion {
+    " Enable for a few commonly used languages
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 
     " Remap code completion to Ctrl+Space
     inoremap <Nul> <C-x><C-o>

@@ -19,3 +19,9 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/minibufexpl"]
+	path = vim/bundle/minibufexpl
+	url = git://github.com/vim-scripts/minibufexpl.vim.git
+[submodule "vim/bundle/TaskList"]
+	path = vim/bundle/TaskList
+	url = git://github.com/vim-scripts/TaskList.vim.git
