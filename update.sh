@@ -7,4 +7,5 @@ curl -Sso ~/dotfiles/bash/git-completion.bash https://raw.github.com/git/git/mas
 OS_NAME=`uname -s`
 if [ "$OS_NAME" == "Linux" ]; then
     sudo apt-get install exuberant-ctags
+    pip install flake8
 fi
