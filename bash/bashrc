@@ -73,6 +73,12 @@
 
 # }
 
+# customFunctions {
+    # This script yells at me when I type some common commands in without fully
+    # thinking about what I'm doing
+    source ~/dotfiles/bash/scripts/customfunctions.sh
+# }
+
 # rvm {
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # }
