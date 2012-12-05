@@ -3,10 +3,12 @@
     syntax on
     filetype plugin indent on
     set nocompatible "vim, not vi
+    set t_Co=256
     set ofu=syntaxcomplete#Complete "Turn on OmniCompletion
+
 " }
 
-" Options {
+" Options {  
     set nohidden "remove the buffer when the tab is closed
     set wildmode=longest:full
     set wildmenu " better command-line completion
@@ -20,6 +22,14 @@
     set laststatus=2 "display the status line always
     set cmdheight=2 "two lines at the bottom, to keep things from getting hidden
     set pastetoggle=<F2> "so we can paste stuff without annoying indents
+
+    " Show Whitespace
+    set list
+    set listchars=eol:¶,tab:»·,trail:˽,extends:›,precedes:‹ " Some other good chars (˷)
+    hi SpecialText ctermfg=234 ctermbg=NONE cterm=NONE
+    hi NonText ctermfg=234 ctermbg=NONE cterm=NONE
+
+
 " }
 "
 " indentation {
@@ -37,6 +47,12 @@
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c set omnifunc=ccomplete#Complete
 
     " Remap code completion to Ctrl+Space
     inoremap <Nul> <C-x><C-o>
@@ -58,8 +74,11 @@
     hi SpellBad cterm=underline
     set showmode "display the current mode
     set cursorline "highlights the light we're on
-    hi cursorline guibg=#111111 "Sets the highlight color
-    hi CursorColumn guibg=#333333 "highlights the cursor
+    set cursorcolumn "highlights the light we're on
+    hi clear cursorline "We don't want an underline
+    hi clear cursorcolumn "We don't want an underline
+    hi cursorline guibg=#111111 ctermbg=0 "Sets the highlight color
+    hi CursorColumn guibg=#333333 ctermbg=0 "highlights the cursor
     set whichwrap=b,s,h,l,<,>,[,] "wrap backspace and cursor
 
     "folding settings

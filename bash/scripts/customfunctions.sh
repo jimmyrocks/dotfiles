@@ -9,13 +9,13 @@ function ssh {
         echo "You did not include a username"
         echo -n "Did you mean: ssh $USER@$1 (y/n): "
         read yn
-        if [[ $yn == "Y" || $yn == "y" ]]; then
-            `which ssh` $USER@$1
-        elif [[ $yn == "N" || $yn == "n" ]]; then
+        if [[ $yn == "N" || $yn == "n" ]]; then
             echo -n "Which username did you intend to use?: "
             read new_un
             echo "ssh" $new_un@$1
             `which ssh` $new_un@$1
+        else
+            `which ssh` $USER@$1
         fi
     fi
 }
@@ -27,13 +27,13 @@ function sftp {
         echo "You did not include a username"
         echo -n "Did you mean: sftp $USER@$1 (y/n): "
         read yn
-        if [[ $yn == "Y" || $yn == "y" ]]; then
-            `which sftp` $USER@$1
-        elif [[ $yn == "N" || $yn == "n" ]]; then
+        if [[ $yn == "N" || $yn == "n" ]]; then
             echo -n "Which username did you intend to use?: "
             read new_un
             echo "sftp" $new_un@$1
             `which sftp` $new_un@$1
+        else
+            `which sftp` $USER@$1
         fi
     fi
 }
