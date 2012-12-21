@@ -8,7 +8,7 @@
 
 " }
 
-" Options {  
+" Options {
     set nohidden "remove the buffer when the tab is closed
     set wildmode=longest:full
     set wildmenu " better command-line completion
@@ -21,13 +21,47 @@
     set ruler "show where we are
     set laststatus=2 "display the status line always
     set cmdheight=2 "two lines at the bottom, to keep things from getting hidden
-    set pastetoggle=<F2> "so we can paste stuff without annoying indents
+    " set pastetoggle=<F2> "so we can paste stuff without annoying indents
 
     " Show Whitespace
     set list
     set listchars=eol:¶,tab:»·,trail:˽,extends:›,precedes:‹ " Some other good chars (˷)
     hi SpecialText ctermfg=234 ctermbg=NONE cterm=NONE
     hi NonText ctermfg=234 ctermbg=NONE cterm=NONE
+
+    " This toggles a paste mode that will turn off line numbers, the mouse, and list if they are enabled
+    let g:old_nu=&nu " Sets the NU remember mode
+    let g:old_mouse=&mouse " Sets the mouse remember mode
+    let g:old_list=&list " Sets the mouse remember mode
+    nmap <silent> <F2> :if &paste <Bar>
+                \set nopaste <Bar>
+                \let &nu=g:old_nu <Bar>
+                \let &mouse=g:old_mouse <Bar>
+                \let &list=g:old_list <Bar>
+                \echo "(nu="g:old_nu") (mouse="g:old_mouse") (list="g:old_list") (paste= 0 )"<bar>
+                \else <Bar>
+                \let g:old_nu=&nu <Bar>
+                \let g:old_mouse=&mouse <Bar>
+                \let g:old_list=&list <Bar>
+                \let &nu=0 <Bar>
+                \let &mouse="" <Bar>
+                \let &list=0 <Bar>
+                \let &paste=1 <Bar>
+                \echo "(nu= 0 ) (mouse=  ) (list= 0 ) (paste= 1 )"<bar>
+                \endif <cr>
+
+    " Toggle numbered lines on F3
+    nmap <F3> :set number! number?<Bar>
+                \echo "(nu="&nu") (mouse="&mouse") (list="&list") (paste="&paste")"<cr>
+    " Toggle mouse on F4
+    nmap <F4> :if &mouse=="" <Bar>
+                \let &mouse="a" <Bar>
+                \echo "(nu="&nu") (mouse= a ) (list="&list") (paste="&paste")"<bar>
+                \else <Bar>
+                \let &mouse="" <Bar>
+                \echo "(nu="&nu") (mouse=  ) (list="&list") (paste="&paste")"<bar>
+                \endif<cr>
+
 
 
 " }
