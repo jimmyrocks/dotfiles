@@ -77,7 +77,7 @@
     "set cursorcolumn "highlights the light we're on
     hi clear cursorline "We don't want an underline
     "hi clear cursorcolumn "We don't want an underline
-    hi cursorline guibg=#111111 ctermbg=0 "Sets the highlight color
+    hi cursorline guibg=#111111 ctermbg=232 "Sets the highlight color
     "hi CursorColumn guibg=#333333 ctermbg=0 "highlights the cursor
     set whichwrap=b,s,h,l,<,>,[,] "wrap backspace and cursor
 

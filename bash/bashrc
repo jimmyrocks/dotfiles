@@ -41,7 +41,7 @@
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
 
-        eval `dircolors ~/dotfiles/bash/scripts/dircolorsdb/dircolors`
+        eval `dircolors ~/dotfiles/bash/scripts/dircolorsdb/dircolors.256dark`
     fi
 # }
 
