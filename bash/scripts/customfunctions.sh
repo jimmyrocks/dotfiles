@@ -3,7 +3,7 @@
 # These are helpers I've added to remind me that I'm doing something wrong
 
 function ssh {
-    if `echo $1 | grep "@|^-" 1>/dev/null 2>1`; then
+    if `echo $1 | grep -E "@|^-" 1>/dev/null 2>1`; then
        `which ssh` $1
     else
         echo "You did not include a username"
