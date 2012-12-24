@@ -4,7 +4,7 @@
 
 function ssh {
     if `echo $1 | grep -E "@|^-" 1>/dev/null 2>1`; then
-       `which ssh` $1
+       `which ssh` $*
     else
         echo "You did not include a username"
         echo -n "Did you mean: ssh $USER@$1 (y/n): "
@@ -12,10 +12,10 @@ function ssh {
         if [[ $yn == "N" || $yn == "n" ]]; then
             echo -n "Which username did you intend to use?: "
             read new_un
-            echo "ssh" $new_un@$1
-            `which ssh` $new_un@$1
+            echo "ssh" $new_un@$*
+            `which ssh` $new_un@$*
         else
-            `which ssh` $USER@$1
+            `which ssh` $USER@$*
         fi
     fi
 }
