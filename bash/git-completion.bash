@@ -141,7 +141,7 @@ Please, don't. https://github.com/styleguide/templates/2.0
     <div class="container">
       <ul id="next-steps">
         <li><a href="/explore">Explore</a> projects and code.</li>
-        <li><a href="/login">Log in</a> if you're trying to access a private repository.</li>
+        <li><a href="/login">Sign in</a> if you're trying to access a private repository.</li>
         <li><a href="/search">Search</a> for a project on GitHub.</li>
       </ul>
 
