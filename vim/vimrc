@@ -21,7 +21,7 @@
     set ruler "show where we are
     set laststatus=2 "display the status line always
     set cmdheight=2 "two lines at the bottom, to keep things from getting hidden
-    " set pastetoggle=<F2> "so we can paste stuff without annoying indents
+    set pastetoggle=<F5> "so we can paste stuff without annoying indents
 
     " Show Whitespace
     set list
