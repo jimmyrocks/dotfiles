@@ -1,6 +1,7 @@
 # This will go through all the vim bundles and update them
 
 git submodule update --init --recursive
+git submodule update
 
 curl -Sso ~/dotfiles/bash/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/scripts/git-completion.bash
 
