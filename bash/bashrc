@@ -13,12 +13,38 @@
         }
         PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]§ '
         alias ls='ls -G' # Color LS uses -G on OSX
+        __bash_color_prefix='\033'
     else
         # Unix / Ubuntu Settings
         PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
         alias ls='ls --color'
+        __bash_color_prefix='\e'
     fi
-
+    __bash_black=$__bash_color_prefix'[30m'
+    __bash_red=$__bash_color_prefix'[31m'
+    __bash_green=$__bash_color_prefix'[32m'
+    __bash_yellow=$__bash_color_prefix'[33m'
+    __bash_blue=$__bash_color_prefix'[34m'
+    __bash_purple=$__bash_color_prefix'[35m'
+    __bash_cyan=$__bash_color_prefix'[36m'
+    __bash_white=$__bash_color_prefix'[37m'
+    __bash_normal=$__bash_color_prefix'[0m'
+    __bash_black_back=$__bash_color_prefix'40m'
+    __bash_red_back=$__bash_color_prefix'[41m'
+    __bash_green_back=$__bash_color_prefix'[42m'
+    __bash_yellow_back=$__bash_color_prefix'[43m'
+    __bash_blue_back=$__bash_color_prefix'[44m'
+    __bash_purple_back=$__bash_color_prefix'[45m'
+    __bash_cyan_back=$__bash_color_prefix'[46m'
+    __bash_white_back=$__bash_color_prefix'[47m'
+    __bash_red_on_black=$__bash_color_prefix'[31;40m'
+    __bash_green_on_black=$__bash_color_prefix'[32;40m'
+    __bash_yellow_on_black=$__bash_color_prefix'[33;40m'
+    __bash_blue_on_black=$__bash_color_prefix'[34;40m'
+    __bash_purple_on_black=$__bash_color_prefix'[35;40m'
+    __bash_cyan_on_black=$__bash_color_prefix'[36;40m'
+    __bash_white_on_black=$__bash_color_prefix'[37;40m'
+ 
 
 # }
 
@@ -50,6 +76,28 @@
     alias ll='ls -alF'
     alias la='ls -A'
     alias l='ls -CF'
+
+    # git aliases
+    alias git.a='git add'
+    alias git.ps='git push'
+    alias git.pl='git pull'
+    alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+    alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
+    %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    alias git.cm='git commit -m'
+    alias git.cam='git commit -am'
+    alias git.s='git status'
+    alias git.='echo -e $__bash_green_on_black"git. shortcuts / commands
+    "$__bash_cyan_on_black"git.a"$__bash_red_on_black" = "$__bash_yellow_on_black"git add
+    "$__bash_cyan_on_black"git.ps"$__bash_red_on_black" = "$__bash_yellow_on_black"git push
+    "$__bash_cyan_on_black"git.pl"$__bash_red_on_black" = "$__bash_yellow_on_black"git pull
+    "$__bash_cyan_on_black"git.l"$__bash_red_on_black" = "$__bash_yellow_on_black"git log
+    "$__bash_cyan_on_black"git.l2"$__bash_red_on_black" = "$__bash_yellow_on_black"git log summary
+    "$__bash_cyan_on_black"git.cm"$__bash_red_on_black" = "$__bash_yellow_on_black"git commit -m
+    "$__bash_cyan_on_black"git.cam"$__bash_red_on_black" = "$__bash_yellow_on_black"git commit -am
+    "$__bash_cyan_on_black"git.s"$__bash_red_on_black" = "$__bash_yellow_on_black"git status
+    "$__bash_cyan_on_black"git."$__bash_red_on_black" = "$__bash_yellow_on_black"this message"$__bash_normal'
+
 
     # Add an "alert" alias for long running commands.  Use like so:
     #   sleep 10; alert
