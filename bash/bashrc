@@ -79,6 +79,7 @@
 
     # git aliases
     alias git.a='git add'
+    alias git.a.='git add .'
     alias git.ps='git push'
     alias git.pl='git pull'
     alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
@@ -87,16 +88,17 @@
     alias git.cm='git commit -m'
     alias git.cam='git commit -am'
     alias git.s='git status'
-    alias git.='echo -e $__bash_green_on_black"git. shortcuts / commands
-    "$__bash_cyan_on_black"git.a"$__bash_red_on_black" = "$__bash_yellow_on_black"git add
-    "$__bash_cyan_on_black"git.ps"$__bash_red_on_black" = "$__bash_yellow_on_black"git push
-    "$__bash_cyan_on_black"git.pl"$__bash_red_on_black" = "$__bash_yellow_on_black"git pull
-    "$__bash_cyan_on_black"git.l"$__bash_red_on_black" = "$__bash_yellow_on_black"git log
-    "$__bash_cyan_on_black"git.l2"$__bash_red_on_black" = "$__bash_yellow_on_black"git log summary
-    "$__bash_cyan_on_black"git.cm"$__bash_red_on_black" = "$__bash_yellow_on_black"git commit -m
-    "$__bash_cyan_on_black"git.cam"$__bash_red_on_black" = "$__bash_yellow_on_black"git commit -am
-    "$__bash_cyan_on_black"git.s"$__bash_red_on_black" = "$__bash_yellow_on_black"git status
-    "$__bash_cyan_on_black"git."$__bash_red_on_black" = "$__bash_yellow_on_black"this message"$__bash_normal'
+    alias git.='echo -e $__bash_green"git. shortcuts / commands
+    "$__bash_cyan"git.a"$__bash_red" = "$__bash_yellow"git add
+    "$__bash_cyan"git.a."$__bash_red" = "$__bash_yellow"git add .
+    "$__bash_cyan"git.ps"$__bash_red" = "$__bash_yellow"git push
+    "$__bash_cyan"git.pl"$__bash_red" = "$__bash_yellow"git pull
+    "$__bash_cyan"git.l"$__bash_red" = "$__bash_yellow"git log
+    "$__bash_cyan"git.l2"$__bash_red" = "$__bash_yellow"git log summary
+    "$__bash_cyan"git.cm"$__bash_red" = "$__bash_yellow"git commit -m
+    "$__bash_cyan"git.cam"$__bash_red" = "$__bash_yellow"git commit -am
+    "$__bash_cyan"git.s"$__bash_red" = "$__bash_yellow"git status
+    "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
 
 
     # Add an "alert" alias for long running commands.  Use like so:
