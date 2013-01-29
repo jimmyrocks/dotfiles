@@ -3,7 +3,11 @@
 # These are helpers I've added to remind me that I'm doing something wrong
 
 function ssh {
+<<<<<<< HEAD
     if `echo $1 | grep -E "@|^-" 1>/dev/null 2>1`; then
+=======
+    if `echo $1 | grep "@\|^-" 1>/dev/null 2>1`; then
+>>>>>>> d6302958197889066e4d8edff116286294095ba5
        `which ssh` $*
     else
         echo "You did not include a username"
@@ -21,8 +25,8 @@ function ssh {
 }
 
 function sftp {
-    if `echo $1 | grep @ 1>/dev/null 2>1`; then
-       `which sftp` $1
+    if `echo $1 | grep "@\|^-" 1>/dev/null 2>1`; then
+       `which sftp` $*
     else
         echo "You did not include a username"
         echo -n "Did you mean: sftp $USER@$1 (y/n): "
