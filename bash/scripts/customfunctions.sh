@@ -3,7 +3,11 @@
 # These are helpers I've added to remind me that I'm doing something wrong
 
 function ssh {
+<<<<<<< HEAD
+    if `echo $1 | grep -E "@|^-" 1>/dev/null 2>1`; then
+=======
     if `echo $1 | grep "@\|^-" 1>/dev/null 2>1`; then
+>>>>>>> d6302958197889066e4d8edff116286294095ba5
        `which ssh` $*
     else
         echo "You did not include a username"
@@ -12,10 +16,10 @@ function ssh {
         if [[ $yn == "N" || $yn == "n" ]]; then
             echo -n "Which username did you intend to use?: "
             read new_un
-            echo "ssh" $new_un@$1
-            `which ssh` $new_un@$1
+            echo "ssh" $new_un@$*
+            `which ssh` $new_un@$*
         else
-            `which ssh` $USER@$1
+            `which ssh` $USER@$*
         fi
     fi
 }
