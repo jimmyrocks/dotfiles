@@ -11,4 +11,6 @@ if [ $OS_NAME = "Linux" ]; then
     sudo apt-get install python-pip
     sudo pip install flake8
     sudo pip install flake8 --upgrade
+    sudo apt-get install node
+    npm install --global jshint
 fi
