@@ -12,12 +12,14 @@ if [ $OS_NAME = "Linux" ]; then
     # Get the ctags plugin and python/flake8
     sudo apt-get install exuberant-ctags
     sudo apt-get install python-pip
+    sudo apt-get install python-setuptools
+    sudo pip install Distribute
     sudo pip install flake8 --upgrade
 
     # get node.js stuff for jshint
-    sudo apt-get install nodejs
-    sudo apt-get install npm
-    npm install --global jshint
+    sudo apt-get install g++ curl libssl-dev apache2-utils
+    sudo apt-get -f install make nodejs npm
+    sudo npm install --global jshint
 
     # get curl
     sudo apt-get install curl
