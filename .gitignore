@@ -2,3 +2,5 @@ backups/*
 *.swp
 vim/.netrwhist
 node_modules
+bash/git-completion.bash
+bash/scripts/dircolorsdb
