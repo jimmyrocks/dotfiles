@@ -11,13 +11,18 @@
         function parse_git_branch () {
             git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
         }
-        PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]§ '
+        PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]$ '
         alias ls='ls -G' # Color LS uses -G on OSX
         __bash_color_prefix='\033'
     else
         # Unix / Ubuntu Settings
-        PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
-        alias ls='ls --color'
+        if [ -z "$TMUX" ]; then 
+            PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")$ ' # Show git branch in status
+            alias ls='ls --color'
+       else
+            TMUX_SESSION=`tmux list-panes | grep active | sed s/:.*//g`
+            PS1='\u[$TMUX_SESSION]:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")$ '
+        fi
         __bash_color_prefix='\e'
     fi
     __bash_black=$__bash_color_prefix'[30m'
@@ -138,3 +143,6 @@
 # flex {
     export PATH=/opt/flex/bin:$PATH
 # }
+
+export TERM=xterm
+[[ -z "$TMUX" ]] && exec tmux -u

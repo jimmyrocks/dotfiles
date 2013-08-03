@@ -6,9 +6,12 @@
     set t_Co=256
     set ofu=syntaxcomplete#Complete "Turn on OmniCompletion
 
+    scriptencoding utf-8
+    set encoding=utf-8
+
 " }
 
-" Options {
+"" Options {
     set nohidden "remove the buffer when the tab is closed
     set wildmode=longest:full
     set wildmenu " better command-line completion
@@ -62,10 +65,9 @@
                 \echo "(nu="&nu") (mouse=  ) (list="&list") (paste="&paste")"<bar>
                 \endif<cr>
 
-
-
 " }
-"
+
+
 " indentation {
     set autoindent "indentation
     set shiftwidth=4
@@ -75,43 +77,26 @@
     set textwidth=79
     set tabstop=8
 " }
-"
-" codeCompletion {
-    " Enable for a few commonly used languages
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-    autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType c set omnifunc=ccomplete#Complete
-
-    " Remap code completion to Ctrl+Space
-    inoremap <Nul> <C-x><C-o>
-" }
-"
+ 
 " nerdtree {
     let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
     noremap gn :NERDTree<Cr>
 " }
-"
 
 " Unsorted {
     set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
     set virtualedit=onemore         " allow for cursor beyond last character
     set history=1000                " Store a ton of history (default is 20)
-    set spell                       " spell checking on 
+    set spell                       " spell checking on
     hi clear SpellBad
     hi SpellBad cterm=underline
     set showmode "display the current mode
-    set cursorline "highlights the light we're on
+    "set cursorline "highlights the light we're on
     "set cursorcolumn "highlights the light we're on
-    hi clear cursorline "We don't want an underline
+    "hi clear cursorline "We don't want an underline
     "hi clear cursorcolumn "We don't want an underline
-    hi cursorline guibg=#111111 ctermbg=232 "Sets the highlight color
+    "hi cursorline guibg=#111111 ctermbg=232 "Sets the highlight color
     "hi CursorColumn guibg=#333333 ctermbg=0 "highlights the cursor
     set whichwrap=b,s,h,l,<,>,[,] "wrap backspace and cursor
 
