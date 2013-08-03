@@ -6,8 +6,13 @@ git submodule update
 OS_NAME=`uname -s`
 if [ $OS_NAME = "Linux" ]; then
     # http://stackoverflow.com/questions/16302436/install-nodejs-on-ubuntu-12-10
+    sudo apt-get install python-software-properties
     sudo add-apt-repository ppa:chris-lea/node.js
     sudo apt-get update
+
+    # Install vim
+    sudo apt-get install vim
+    sudo apt-get install tmux
 
     # Get the ctags plugin and python/flake8
     sudo apt-get install exuberant-ctags
