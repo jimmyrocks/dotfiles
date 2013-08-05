@@ -28,7 +28,7 @@
 
     " Show Whitespace
     set list
-    set listchars=eol:¶,tab:»·,trail:˽,extends:›,precedes:‹ " Some other good chars (˷)
+    set listchars=eol:¶,tab:»·,trail:ˍ,extends:›,precedes:‹ " Some other good chars (˷˽)
     hi SpecialText ctermfg=234 ctermbg=NONE cterm=NONE
     hi NonText ctermfg=234 ctermbg=NONE cterm=NONE
 
