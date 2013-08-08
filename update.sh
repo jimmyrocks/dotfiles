@@ -1,7 +1,8 @@
 # This will go through all the vim bundles and update them
 
-git submodule update --init --recursive
+git submodule init
 git submodule update
+git submodule foreach git pull origin master
 
 OS_NAME=`uname -s`
 if [ $OS_NAME = "Linux" ]; then
