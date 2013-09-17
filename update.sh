@@ -52,6 +52,7 @@ if [ $OS_NAME = "Linux" ]; then
     apt-get install g++ curl libssl-dev apache2-utils
     apt-get install make nodejs
     npm install --global jshint
+    npm install --global ext
 
     # get curl
     echo '------------'

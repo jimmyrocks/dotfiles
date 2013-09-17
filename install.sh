@@ -21,6 +21,8 @@ mv ~/.bash_profile ~/dotfiles/backups/$this_host/$this_date/.bash_profile
 mv ~/.vimrc ~/dotfiles/backups/$this_host/$this_date/.vimrc
 mv ~/.vim ~/dotfiles/backups/$this_host/$this_date/.vim
 #
+# other files
+mv ~/.jshintrc ~/dotfiles/backups/$this_host/$this_date/.jshintrc
 # }
 
 # CREATE SYMLINKS {
@@ -33,6 +35,8 @@ ln -s ~/dotfiles/bash/bash_profile ~/.bash_profile
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 #
+# other
+ln -s ~/dotfiles/other/jshintrc ~/.jshintrc
 # }
 
 # Run an update

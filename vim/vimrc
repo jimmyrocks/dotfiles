@@ -70,11 +70,11 @@
 
 " indentation {
     set autoindent "indentation
-    set shiftwidth=4
-    set softtabstop=4
+    set shiftwidth=2
+    set softtabstop=2
     set expandtab
     set backspace=indent,eol,start
-    set textwidth=79
+    " set textwidth=79
     set tabstop=8
 " }
  
