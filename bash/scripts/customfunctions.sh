@@ -49,3 +49,7 @@ function vf {
     fi
 }
 
+function serveHttp {
+  /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
+  python -m SimpleHTTPServer $1
+}
