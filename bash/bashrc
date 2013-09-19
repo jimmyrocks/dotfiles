@@ -144,5 +144,8 @@
     export PATH=/opt/flex/bin:$PATH
 # }
 
-export TERM=xterm
-[[ -z "$TMUX" ]] && exec tmux -u
+# Use tmux on Linux only
+if [ $OS_NAME = "Linux" ]; then
+  export TERM=xterm
+  [[ -z "$TMUX" ]] && exec tmux -u
+fi

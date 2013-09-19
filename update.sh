@@ -2,6 +2,7 @@
 
 git submodule init
 git submodule update
+git submodule upgrade
 git submodule foreach git pull origin master
 
 OS_NAME=`uname -s`
@@ -14,34 +15,22 @@ if [ $OS_NAME = "Linux" ]; then
     add-apt-repository ppa:chris-lea/node.js
     add-apt-repository ppa:git-core/ppa
     echo '---------------------------'
-    echo 'Updating Installed Software'
+    echo 'Updating and Installing Software'
     echo '---------------------------'
     apt-get update
     apt-get upgrade
+    apt-get install vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl
 
-    # Install vim
-    echo '--------------'
-    echo 'Installing vim'
-    echo '--------------'
-    apt-get install vim
-    echo '---------------'
-    echo 'Installing tmux'
-    echo '---------------'
-    apt-get install tmux
-
-    # Get the latest git
-    echo '------------'
-    echo 'Updating git'
-    echo '------------'
-    apt-get install git git-core
+    echo '----------------'
+    echo 'Setting up git'
+    echo '----------------'
+    git config --global user.name "Jim McAndrew"
+    git config --global user.email jim@loc8.us
 
     # Get the ctags plugin and python/flake8
     echo '----------------'
     echo 'Adding vim tools'
     echo '----------------'
-    apt-get install exuberant-ctags
-    apt-get install python-pip
-    apt-get install python-setuptools
     pip install Distribute
     pip install flake8 --upgrade
 
@@ -49,16 +38,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo '-------------'
     echo 'Adding nodejs'
     echo '-------------'
-    apt-get install g++ curl libssl-dev apache2-utils
-    apt-get install make nodejs
     npm install --global jshint
-    npm install --global ext
-
-    # get curl
-    echo '------------'
-    echo 'Getting curl'
-    echo '------------'
-    apt-get install curl
 
     # Set timezone
     echo '---------------'
