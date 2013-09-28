@@ -2,7 +2,6 @@
 
 git submodule init
 git submodule update
-git submodule upgrade
 git submodule foreach git pull origin master
 
 OS_NAME=`uname -s`
@@ -11,15 +10,16 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------'
     echo 'Adding packages'
     echo '---------------'
-    apt-get install python-software-properties
-    add-apt-repository ppa:chris-lea/node.js
-    add-apt-repository ppa:git-core/ppa
+    apt-get install -y python-software-properties
+    add-apt-repository -y ppa:chris-lea/node.js
+    add-apt-repository -y ppa:git-core/ppa
+
     echo '---------------------------'
     echo 'Updating and Installing Software'
     echo '---------------------------'
     apt-get update
     apt-get upgrade
-    apt-get install vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl
+    apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments
 
     echo '----------------'
     echo 'Setting up git'
@@ -36,9 +36,11 @@ if [ $OS_NAME = "Linux" ]; then
 
     # get node.js stuff for jshint
     echo '-------------'
-    echo 'Adding nodejs'
+    echo 'Adding nodejs tools'
     echo '-------------'
     npm install --global jshint
+    npm install --global ext
+    npm install --global jquery
 
     # Set timezone
     echo '---------------'
