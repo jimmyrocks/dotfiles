@@ -95,6 +95,7 @@
     alias git.cm='git commit -m'
     alias git.cam='git commit -am'
     alias git.s='git status'
+    alias exit-tmux='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
     alias git.='echo -e $__bash_green"git. shortcuts / commands
     "$__bash_cyan"git.a"$__bash_red" = "$__bash_yellow"git add
     "$__bash_cyan"git.a."$__bash_red" = "$__bash_yellow"git add .
