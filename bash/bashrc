@@ -150,5 +150,5 @@
 # Use tmux on Linux only
 if [ $OS_NAME = "Linux" ]; then
   export TERM=xterm
-  [[ -z "$TMUX" ]] && exec tmux -u
+  [[ -z "$TMUX" ]] && (exec tmux attach || exec tmux -u)
 fi
