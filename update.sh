@@ -17,8 +17,8 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------------------'
     echo 'Updating and Installing Software'
     echo '---------------------------'
-    apt-get update
-    apt-get upgrade
+    apt-get -y update
+    apt-get -y upgrade
     apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments
 
     echo '----------------'
