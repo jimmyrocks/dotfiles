@@ -89,6 +89,7 @@
     alias git.a.='git add .'
     alias git.ps='git push'
     alias git.pl='git pull'
+    alias git.pp='git pull; git push'
     alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
     alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -101,6 +102,7 @@
     "$__bash_cyan"git.a."$__bash_red" = "$__bash_yellow"git add .
     "$__bash_cyan"git.ps"$__bash_red" = "$__bash_yellow"git push
     "$__bash_cyan"git.pl"$__bash_red" = "$__bash_yellow"git pull
+    "$__bash_cyan"git.pp"$__bash_red" = "$__bash_yellow"git pull; git push
     "$__bash_cyan"git.l"$__bash_red" = "$__bash_yellow"git log
     "$__bash_cyan"git.l2"$__bash_red" = "$__bash_yellow"git log summary
     "$__bash_cyan"git.cm"$__bash_red" = "$__bash_yellow"git commit -m
