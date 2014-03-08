@@ -26,6 +26,10 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------'
     git config --global user.name "Jim McAndrew"
     git config --global user.email jim@loc8.us
+    git config --global credential.helper cache
+    git config --global core.editor vim
+    git config --global help.autocorrect 1
+    git config --global color.ui true
 
     # Get the ctags plugin and python/flake8
     echo '----------------'
