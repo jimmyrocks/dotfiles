@@ -36,7 +36,7 @@ call pathogen#infect()
     " Show Whitespace
     set list
     set listchars=eol:¶,tab:»·,trail:ˍ,extends:›,precedes:‹ " Some other good chars (˷˽)
-    hi SpecialText ctermfg=232 ctermbg=NONE cterm=NONE
+    hi SpecialText ctermfg=235 ctermbg=NONE cterm=NONE
     hi NonText ctermfg=235 ctermbg=NONE cterm=NONE
 
     " This toggles a paste mode that will turn off line numbers, the mouse, and list if they are enabled
@@ -103,7 +103,7 @@ call pathogen#infect()
     "set cursorcolumn "highlights the light we're on
     hi clear cursorline "We don't want an underline
     "hi clear cursorcolumn "We don't want an underline
-    hi cursorline guibg=#111111 ctermbg=234 "Sets the highlight color
+    hi cursorline guibg=#111111 ctermbg=233 "Sets the highlight color
     "hi CursorColumn guibg=#333333 ctermbg=0 "highlights the cursor
     set whichwrap=b,s,h,l,<,>,[,] "wrap backspace and cursor
 
