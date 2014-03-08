@@ -114,4 +114,8 @@ call pathogen#infect()
     set nofoldenable        "dont fold by default
     set foldlevel=1         "this is just what i use
 
+    "jsbeautify
+    autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+    autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+    autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 " }
