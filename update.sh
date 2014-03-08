@@ -52,13 +52,14 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------'
     echo 'Setting timezone'
     echo '---------------'
-    sudo dpkg-reconfigure tzdata
+    dpkg-reconfigure tzdata
 fi
 
 echo '----------------------------'
-echo 'Adding bash completion files'
+echo 'Adding bash completion and colorizing files'
 echo '----------------------------'
-curl -Sso ~/dotfiles/bash/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/scripts/git-completion.bash
+curl -Sso ~/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+curl -Sso ~/dotfiles/bash/scripts/dircolors.256dark https://github.com/seebi/dircolors-solarized/blob/master/dircolors.256dark
 
 echo '------------------------'
 echo 'Everything is up to date'
