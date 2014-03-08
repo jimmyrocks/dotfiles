@@ -30,6 +30,7 @@ if [ $OS_NAME = "Linux" ]; then
     git config --global core.editor vim
     git config --global help.autocorrect 1
     git config --global color.ui true
+    git config --global push.default simple
 
     # Get the ctags plugin and python/flake8
     echo '----------------'
