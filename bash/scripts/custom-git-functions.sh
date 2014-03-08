@@ -45,7 +45,7 @@
     "$__bash_cyan"git.cm"$__bash_red" = "$__bash_yellow"git commit -m
     "$__bash_cyan"git.cam"$__bash_red" = "$__bash_yellow"git commit -am
     "$__bash_cyan"git.s"$__bash_red" = "$__bash_yellow"git status
-    "$__bash_cyan"git.d"$__bash_red" = "#__bash_yellow"git diff
-    "$__bash_cyan"git.adc"$__bash_red" = "#__bash_yellow"git add [FILE], shows diff, prompts for message
-    "$__bash_cyan"git.acm"$__bash_red" = "#__bash_yellow"git add [FILE], commits with [COMMENT]
+    "$__bash_cyan"git.d"$__bash_red" = "$__bash_yellow"git diff
+    "$__bash_cyan"git.adc"$__bash_red" = "$__bash_yellow"git add [FILE], shows diff, prompts for message
+    "$__bash_cyan"git.acm"$__bash_red" = "$__bash_yellow"git add [FILE], commits with [COMMENT]
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
