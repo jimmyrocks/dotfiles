@@ -2,7 +2,7 @@
     function __git_remote_branch () {
       echo `git remote` `git branch | sed -n '/\* /s///p'`
     }
-    function git.ac () {
+    function git.adc () {
       echo "╔════════════════════════════════════════════════════════════════════════════╗"
       echo -e $__bash_cyan"Diff on $1"$__bash_normal
       git diff $1
@@ -13,6 +13,10 @@
       fi
       git add $1
       git commit -m comment
+    }
+    function git.acm () {
+      git add $1
+      git commit -m "$2";
     }
 
 
@@ -42,4 +46,6 @@
     "$__bash_cyan"git.cam"$__bash_red" = "$__bash_yellow"git commit -am
     "$__bash_cyan"git.s"$__bash_red" = "$__bash_yellow"git status
     "$__bash_cyan"git.d"$__bash_red" = "#__bash_yellow"git diff
+    "$__bash_cyan"git.adc"$__bash_red" = "#__bash_yellow"git add [FILE], shows diff, prompts for message
+    "$__bash_cyan"git.acm"$__bash_red" = "#__bash_yellow"git add [FILE], commits with [COMMENT]
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
