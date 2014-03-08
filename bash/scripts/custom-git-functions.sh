@@ -3,10 +3,10 @@
       echo `git remote` `git branch | sed -n '/\* /s///p'`
     }
     function git.adc () {
-      echo "╔════════════════════════════════════════════════════════════════════════════╗"
+      echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
       echo -e $__bash_cyan"Diff on $1"$__bash_normal
       git diff $1
-      echo -e $__bash_red"═════════════════════════════════════════════════════════════════════════════"$__bash_normal
+      echo -e $__bash_yellow"═════════════════════════════════════════════════════════════════════════════"$__bash_normal
       read -p "What do you want your comment to be? (default: \"Update $1\": " comment
       if [[ $ipaddress == "" ]]; then
         comment="Update $1"
