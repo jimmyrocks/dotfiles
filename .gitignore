@@ -3,5 +3,5 @@ build/*
 *.swp
 vim/.netrwhist
 node_modules
-bash/git-completion.bash
-bash/scripts/dircolorsdb/*
+bash/scripts/git-completion.bash
+bash/scripts/dircolors.256dark
