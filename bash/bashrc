@@ -151,7 +151,7 @@
 
 # Use tmux on Linux only
 if [ $OS_NAME = "Linux" ]; then
-  export TERM=xterm
+  export TERM="xterm-256color"
   if [ -z "$TMUX" ]; then
     # http://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
     base_session='base_session'
