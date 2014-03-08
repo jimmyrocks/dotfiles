@@ -19,39 +19,18 @@
         # Unix / Ubuntu Settings
         if [ -z "$TMUX" ]; then 
             PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
-            alias ls='ls --color'
        else
             TMUX_SESSION=`tmux list-panes | grep active | sed s/:.*//g`
             PS1='\u[$TMUX_SESSION]:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ '
         fi
+        alias ls='ls --color'
         __bash_color_prefix='\e'
     fi
-    __bash_black=$__bash_color_prefix'[30m'
-    __bash_red=$__bash_color_prefix'[31m'
-    __bash_green=$__bash_color_prefix'[32m'
-    __bash_yellow=$__bash_color_prefix'[33m'
-    __bash_blue=$__bash_color_prefix'[34m'
-    __bash_purple=$__bash_color_prefix'[35m'
-    __bash_cyan=$__bash_color_prefix'[36m'
-    __bash_white=$__bash_color_prefix'[37m'
-    __bash_normal=$__bash_color_prefix'[0m'
-    __bash_black_back=$__bash_color_prefix'40m'
-    __bash_red_back=$__bash_color_prefix'[41m'
-    __bash_green_back=$__bash_color_prefix'[42m'
-    __bash_yellow_back=$__bash_color_prefix'[43m'
-    __bash_blue_back=$__bash_color_prefix'[44m'
-    __bash_purple_back=$__bash_color_prefix'[45m'
-    __bash_cyan_back=$__bash_color_prefix'[46m'
-    __bash_white_back=$__bash_color_prefix'[47m'
-    __bash_red_on_black=$__bash_color_prefix'[31;40m'
-    __bash_green_on_black=$__bash_color_prefix'[32;40m'
-    __bash_yellow_on_black=$__bash_color_prefix'[33;40m'
-    __bash_blue_on_black=$__bash_color_prefix'[34;40m'
-    __bash_purple_on_black=$__bash_color_prefix'[35;40m'
-    __bash_cyan_on_black=$__bash_color_prefix'[36;40m'
-    __bash_white_on_black=$__bash_color_prefix'[37;40m'
- 
+# }
 
+# customFunctions {
+    # Add a bunch of color variables
+    source ~/dotfiles/bash/scripts/bash_colors.sh
 # }
 
 # historySettings {
@@ -74,62 +53,21 @@
         alias egrep='egrep --color=auto'
         alias ccat='pygmentize'
 
-        #eval `dircolors ~/dotfiles/bash/scripts/dircolorsdb/dircolors.256dark`
+        eval `dircolors ~/dotfiles/bash/scripts/dircolorsdb/dircolors.256dark`
     fi
 # }
 
 # aliases {
     # some more ls aliases
-    alias ll='ls -alFh'
-    alias la='ls -Ah'
-    alias l='ls -CFh'
-
-    # git aliases
-    alias git.a='git add'
-    alias git.a.='git add .'
-    alias git.ps='git push'
-    alias git.pl='git pull'
-    alias git.pp='git pull; git push'
-    function git.ppp () {
-      git pull `git remote` `git branch | sed -n '/\* /s///p'`
-      git push `git remote` `git branch | sed -n '/\* /s///p'`
-    }
-    alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
-    alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
-    %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-    alias git.cm='git commit -m'
-    alias git.cam='git commit -am'
-    alias git.s='git status'
-    alias exit-tmux='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
-    alias git.='echo -e $__bash_green"git. shortcuts / commands
-    "$__bash_cyan"git.a"$__bash_red" = "$__bash_yellow"git add
-    "$__bash_cyan"git.a."$__bash_red" = "$__bash_yellow"git add .
-    "$__bash_cyan"git.ps"$__bash_red" = "$__bash_yellow"git push
-    "$__bash_cyan"git.pl"$__bash_red" = "$__bash_yellow"git pull
-    "$__bash_cyan"git.pp"$__bash_red" = "$__bash_yellow"git pull; git push
-    "$__bash_cyan"git.ppp"$__bash_red" = "$__bash_yellow"git pull [CURRENT ORIGIN] [CURRENT BRANCH]; git push [CURRENT ORIGIN] [CURRENT BRANCH]
-    "$__bash_cyan"git.l"$__bash_red" = "$__bash_yellow"git log
-    "$__bash_cyan"git.l2"$__bash_red" = "$__bash_yellow"git log summary
-    "$__bash_cyan"git.cm"$__bash_red" = "$__bash_yellow"git commit -m
-    "$__bash_cyan"git.cam"$__bash_red" = "$__bash_yellow"git commit -am
-    "$__bash_cyan"git.s"$__bash_red" = "$__bash_yellow"git status
-    "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
-
+    alias ll='ls -alFh --color'
+    alias la='ls -Ah --color'
+    alias l='ls -CFh --color'
 
     # Add an "alert" alias for long running commands.  Use like so:
     #   sleep 10; alert
     # (not working on mac) alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-    # Alias definitions.
-    # You may want to put all your additions into a separate file like
-    # ~/.bash_aliases, instead of adding them here directly.
-    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
- 
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
-    fi
-
-    # enable programmable completion features (you don't need to enable
+     # enable programmable completion features (you don't need to enable
     # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
     # sources /etc/bash.bashrc).
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -144,6 +82,7 @@
     # This script yells at me when I type some common commands in without fully
     # thinking about what I'm doing
     source ~/dotfiles/bash/scripts/customfunctions.sh
+    source ~/dotfiles/bash/scripts/git-completion.sh
 # }
 
 # rvm {
