@@ -59,7 +59,7 @@ echo '----------------------------'
 echo 'Adding bash completion and colorizing files'
 echo '----------------------------'
 curl -Sso ~/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-curl -Sso ~/dotfiles/bash/scripts/dircolors.256dark https://github.com/seebi/dircolors-solarized/blob/master/dircolors.256dark
+curl -Sso ~/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
 
 echo '------------------------'
 echo 'Everything is up to date'
