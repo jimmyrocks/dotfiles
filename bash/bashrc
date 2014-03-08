@@ -1,4 +1,3 @@
-#lias
 #.bashrc file
 #
 # commandPrompt {
@@ -53,7 +52,7 @@
         alias egrep='egrep --color=auto'
         alias ccat='pygmentize'
 
-        eval `dircolors ~/dotfiles/bash/scripts/dircolorsdb/dircolors.256dark`
+        eval `dircolors ~/dotfiles/bash/scripts/dircolors.256dark`
     fi
 # }
 
@@ -82,7 +81,7 @@
     # This script yells at me when I type some common commands in without fully
     # thinking about what I'm doing
     source ~/dotfiles/bash/scripts/customfunctions.sh
-    source ~/dotfiles/bash/scripts/git-completion.sh
+    source ~/dotfiles/bash/scripts/custom-git-functions.sh
 # }
 
 # rvm {
