@@ -1,8 +1,8 @@
 # This will go through all the vim bundles and update them
 
 git submodule init
-git submodule update
-git submodule foreach git pull origin master
+git submodule update --recursive
+git submodule foreach git pull --recurse-submodules origin master
 
 OS_NAME=`uname -s`
 if [ $OS_NAME = "Linux" ]; then
@@ -20,12 +20,18 @@ if [ $OS_NAME = "Linux" ]; then
     apt-get -y update
     apt-get -y upgrade
     apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments
+    apt-get autoremove -y
 
     echo '----------------'
     echo 'Setting up git'
     echo '----------------'
     git config --global user.name "Jim McAndrew"
     git config --global user.email jim@loc8.us
+    git config --global credential.helper cache
+    git config --global core.editor vim
+    git config --global help.autocorrect 1
+    git config --global color.ui true
+    git config --global push.default simple
 
     # Get the ctags plugin and python/flake8
     echo '----------------'
