@@ -1,9 +1,24 @@
-# git aliases
-    alias git.a='git add'
-    alias git.a.='git add .'
+# git functions
     function __git_remote_branch () {
       echo `git remote` `git branch | sed -n '/\* /s///p'`
     }
+    function git.ac () {
+      echo "╔════════════════════════════════════════════════════════════════════════════╗"
+      echo -e $__bash_cyan"Diff on $1"$__bash_normal
+      git diff $1
+      echo -e $__bash_red"═════════════════════════════════════════════════════════════════════════════"$__bash_normal
+      read -p "What do you want your comment to be? (default: \"Update $1\": " comment
+      if [[ $ipaddress == "" ]]; then
+        comment="Update $1"
+      fi
+      git add $1
+      git commit -m comment
+    }
+
+
+# git aliases
+    alias git.a='git add'
+    alias git.a.='git add .'
     alias git.ps='git push `__git_remote_branch`'
     alias git.pl='git pull `__git_remote_branch`'
     alias git.pp='git pull `__git_remote_branch`; git push `__git_remote_branch`'
