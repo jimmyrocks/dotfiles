@@ -1,6 +1,6 @@
 # git functions
     function __git_remote_branch () {
-      echo `git remote` `git branch | sed -n '/\* /s///p'`
+      echo 'origin' `git branch | sed -n '/\* /s///p'`
     }
     function git.adc () {
       echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
