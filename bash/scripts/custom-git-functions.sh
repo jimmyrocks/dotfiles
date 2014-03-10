@@ -5,16 +5,17 @@
 
     function __git_commit_file () {
       git add $1
-      read -r -e -p "What do you want your comment to be? (default: \"Update $1\"): " comment
+      _basefile=$(basename $1)
+      read -r -e -p "What do you want your comment to be? (default: \"Update $_basefile\"): " comment
       if [ $comment == "" ]; then
-        comment="Update $1"
+        comment="Update $_basefile"
       fi
       git commit -m "$comment"
     }
 
     function git.loop () {
       git_dir=`git rev-parse --show-toplevel`
-      git_files=`git status --porcelain | grep '^[\sM]M ' | sed -e 's/^[\sM]M\s//g'`
+      git_files=`git status --porcelain | grep '^[ M]M ' | sed -e 's/^[ M]M\s//g'`
         for git_file in $git_files; do
           echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
             read -r -e -p "Add the file? (y/N/d): $git_dir/$git_file: " char
