@@ -2,19 +2,19 @@
     function __git_remote_branch () {
       echo 'origin' `git branch | sed -n '/\* /s///p'`
     }
-    
+
     function __git_commit_file () {
       git add $1
       read -r -e -p "What do you want your comment to be? (default: \"Update $1\"): " comment
-      if [[ $comment == "" ]]; then
+      if [ $comment == "" ]; then
         comment="Update $1"
       fi
-      git commit -m $comment
+      git commit -m "$comment"
     }
-    
-    function git.loop() {
+
+    function git.loop () {
       git_dir=`git rev-parse --show-toplevel`
-      git_files=`git status --porcelain | grep '^ M ' | sed -e 's/^\sM\s//g'`
+      git_files=`git status --porcelain | grep '^[\sM]M ' | sed -e 's/^[\sM]M\s//g'`
         for git_file in $git_files; do
           echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
             read -r -e -p "Add the file? (y/N/d): $git_dir/$git_file: " char
@@ -26,7 +26,7 @@
             fi
         done
     }
-    
+
     function git.adc () {
       echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
       echo -e $__bash_cyan"Diff on $1"$__bash_normal
@@ -36,9 +36,9 @@
       if [ $yn == "y" -o $yn == "Y" ]; then
         __git_commit_file $1
       fi
-      
+
     }
-    
+
     function git.acm () {
       git add $1
       git commit -m "$2";
@@ -73,4 +73,5 @@
     "$__bash_cyan"git.d"$__bash_red" = "$__bash_yellow"git diff
     "$__bash_cyan"git.adc"$__bash_red" = "$__bash_yellow"git add [FILE], shows diff, prompts for message
     "$__bash_cyan"git.acm"$__bash_red" = "$__bash_yellow"git add [FILE], commits with [COMMENT]
+    "$__bash_cyan"git.loop"$__bash_red" = "$__bash_yellow"Loops through all files that are not yet committed
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
