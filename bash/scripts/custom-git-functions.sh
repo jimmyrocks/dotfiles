@@ -12,7 +12,7 @@
         comment="Update $1"
       fi
       git add $1
-      git commit -m comment
+      git commit -m $comment
     }
     function git.acm () {
       git add $1
