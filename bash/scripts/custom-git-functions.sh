@@ -7,7 +7,7 @@
       git add $1
       _basefile=$(basename $1)
       read -r -e -p "What do you want your comment to be? (default: \"Update $_basefile\"): " comment
-      echo 'a'
+      echo 'a '
       if [[ $comment == "" ]]; then
         echo 'b'
         comment="Update $_basefile"
