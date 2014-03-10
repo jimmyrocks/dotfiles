@@ -37,14 +37,12 @@
       if [ $yn == "y" -o $yn == "Y" ]; then
         __git_commit_file $1
       fi
-
     }
 
     function git.acm () {
       git add $1
       git commit -m "$2";
     }
-
 
 # git aliases
     alias git.a='git add'
