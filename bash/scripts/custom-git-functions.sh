@@ -2,18 +2,43 @@
     function __git_remote_branch () {
       echo 'origin' `git branch | sed -n '/\* /s///p'`
     }
+    
+    function __git_commit_file () {
+      git add $1
+      read -r -e -p "What do you want your comment to be? (default: \"Update $1\"): " comment
+      if [[ $comment == "" ]]; then
+        comment="Update $1"
+      fi
+      git commit -m $comment
+    }
+    
+    function git.loop() {
+      git_dir=`git rev-parse --show-toplevel`
+      git_files=`git status --porcelain | grep '^ M ' | sed -e 's/^\sM\s//g'`
+        for git_file in $git_files; do
+          echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
+            read -r -e -p "Add the file? (y/N/d): $git_dir/$git_file: " char
+            if [ $char == "d" -o $char == "D" ]; then
+              git.adc $git_dir'/'$git_file
+            fi
+            if [ $char == "y" -o $char == "Y" ]; then
+              __git_commit_file $git_dir'/'$git_file
+            fi
+        done
+    }
+    
     function git.adc () {
       echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
       echo -e $__bash_cyan"Diff on $1"$__bash_normal
-      git diff $1
       echo -e $__bash_yellow"╚════════════════════════════════════════════════════════════════════════════╝"$__bash_normal
-      read -r -e -p "What do you want your comment to be? (default: \"Update $1\"): " comment
-      if [[ $ipaddress == "" ]]; then
-        comment="Update $1"
+      git diff $1
+      read -r -e -p "Do you still want to commit this file? (y/N): " yn
+      if [ $yn == "y" -o $yn == "Y" ]; then
+        __git_commit_file $1
       fi
-      git add $1
-      git commit -m $comment
+      
     }
+    
     function git.acm () {
       git add $1
       git commit -m "$2";
