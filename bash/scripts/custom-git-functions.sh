@@ -6,7 +6,8 @@
     function __git_commit_file () {
       git add $1
       _basefile=$(basename $1)
-      read -r -e -p "What do you want your comment to be? (default: \"Update $_basefile\"): " comment
+      echo -e -n "What do you want your comment to be? (default: $__bash_green_on_black\"Update $_basefile\"$__bash_normal): "
+      read -r -e comment
       if [[ $comment == "" ]]; then
         comment="Update $_basefile"
       fi
