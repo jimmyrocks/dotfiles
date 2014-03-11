@@ -16,6 +16,9 @@
     function git.loop () {
       git_dir=`git rev-parse --show-toplevel`
       git_files=`git status --porcelain | grep '^[ M]M ' | sed -e 's/^[ M]M\s//g'`
+      echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
+      git status
+      echo -e $__bash_yellow"╚════════════════════════════════════════════════════════════════════════════╝"$__bash_normal
       for git_file in $git_files; do
         echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
           read -r -e -p "Add the file? (y/N/d): $git_dir/$git_file: " char
