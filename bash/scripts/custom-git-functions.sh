@@ -21,7 +21,8 @@
       echo -e $__bash_yellow"╚════════════════════════════════════════════════════════════════════════════╝"$__bash_normal
       for git_file in $git_files; do
         echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
-          read -r -e -p "Add the file? (y/N/d): $git_dir/$git_file: " char
+          echo -e -n "Add the file? (y/N/d): $__bash_green_on_black$git_dir/$git_file$__bash_normal: "
+          read -r -e char
           if [ $char == "d" -o $char == "D" ]; then
             git.adc $git_dir'/'$git_file
           fi
