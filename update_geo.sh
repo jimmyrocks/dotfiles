@@ -31,9 +31,10 @@ echo 'Installing gdal'
 echo '---------------------------'
 # Get gdal!
 apt-get remove gdal-bin #In case you have an older verion
+sudo apt-get install subversion
 svn checkout https://svn.osgeo.org/gdal/trunk/gdal ~/tmp/gdal
 cd ~/tmp/gdal
-./configure --with-python --with-openjpeg --with-geotiff --with-jpeg --with-png --with-expat --with-libkml --with-fgdb=/usr/local/FileGDB_API --with-ogdi=no --with-openjpeg --with-geos=yes
+./configure
 make
 make install
 ldconfig
