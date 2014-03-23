@@ -9,6 +9,8 @@ call pathogen#infect()
     scriptencoding utf-8
     set encoding=utf-8
 
+     set viminfo='100,<1000,s10,h
+
     syntax enable
 
     set background=dark
