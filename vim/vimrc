@@ -66,6 +66,7 @@ call pathogen#infect()
     " Toggle numbered lines on F3
     nmap <F3> :set number! number?<Bar>
                 \echo "(nu="&nu") (mouse="&mouse") (list="&list") (paste="&paste")"<cr>
+
     " Toggle mouse on F4
     nmap <F4> :if &mouse=="" <Bar>
                 \let &mouse="a" <Bar>
@@ -74,7 +75,6 @@ call pathogen#infect()
                 \let &mouse="" <Bar>
                 \echo "(nu="&nu") (mouse=  ) (list="&list") (paste="&paste")"<bar>
                 \endif<cr>
-
 " }
 
 
@@ -91,6 +91,12 @@ call pathogen#infect()
 " nerdtree {
     let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
     noremap gn :NERDTree<Cr>
+
+    " Tabbed editing
+    map  <C-l> :tabn<CR>
+    map  <C-h> :tabp<CR>
+    map  <C-n> :tabnew<CR>
+    map  <C-t> :NERDTreeToggle<cr>
 " }
 
 " Unsorted {
