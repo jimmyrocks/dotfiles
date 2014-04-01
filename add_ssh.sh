@@ -1,6 +1,5 @@
 #!/bin/bash
 
-SCRIPT=$(readlink -f "$0")
-BASEDIR=$(dirname "SCRIPT")
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 eval `ssh-agent -s`
-ssh-add $BASEDIR/id_rsa
+ssh-add $DIR/id_rsa
