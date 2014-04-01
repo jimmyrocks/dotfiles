@@ -2,4 +2,5 @@
 
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname "SCRIPT")
-ssh-add $BASEDIR"/id_rsa"
+eval `ssh-agent -s`
+ssh-add $BASEDIR/id_rsa
