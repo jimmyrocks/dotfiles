@@ -46,6 +46,7 @@ call pathogen#infect()
     let g:old_nu=&nu " Sets the NU remember mode
     let g:old_mouse=&mouse " Sets the mouse remember mode
     let g:old_list=&list " Sets the mouse remember mode
+    imap <silent> <F2> <Esc><F2>a
     nmap <silent> <F2> :if &paste <Bar>
                 \set nopaste <Bar>
                 \let &nu=g:old_nu <Bar>
@@ -64,10 +65,12 @@ call pathogen#infect()
                 \endif <cr>
 
     " Toggle numbered lines on F3
+    imap <silent> <F3> <Esc><F3>a
     nmap <F3> :set number! number?<Bar>
                 \echo "(nu="&nu") (mouse="&mouse") (list="&list") (paste="&paste")"<cr>
 
     " Toggle mouse on F4
+    imap <silent> <F4> <Esc><F4>a
     nmap <F4> :if &mouse=="" <Bar>
                 \let &mouse="a" <Bar>
                 \echo "(nu="&nu") (mouse= a ) (list="&list") (paste="&paste")"<bar>
