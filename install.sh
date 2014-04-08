@@ -23,6 +23,7 @@ mv ~/.vim ~/dotfiles/backups/$this_host/$this_date/.vim
 #
 # other files
 mv ~/.jshintrc ~/dotfiles/backups/$this_host/$this_date/.jshintrc
+mv ~/.tmux.confg ~/dotfiles/backups/$this_host/$this_date/.tmux.conf
 # }
 
 # CREATE SYMLINKS {
@@ -37,6 +38,7 @@ ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 #
 # other
 ln -s ~/dotfiles/other/jshintrc ~/.jshintrc
+ln -s ~/dotfiles/other/tmux.conf ~/.tmux.conf
 # }
 
 # Run an update
