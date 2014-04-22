@@ -19,9 +19,6 @@
 [submodule "vim/bundle/TaskList"]
 	path = vim/bundle/TaskList
 	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bash/scripts/dircolorsdb"]
 	path = bash/scripts/dircolorsdb
 	url = https://github.com/seebi/dircolors-solarized.git
