@@ -5,3 +5,5 @@ vim/.netrwhist
 node_modules
 bash/scripts/git-completion.bash
 bash/scripts/dircolors.256dark
+vim/syntax/carto.vim
+vim/syntax/python.vim
