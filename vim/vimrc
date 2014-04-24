@@ -9,7 +9,7 @@ call pathogen#infect()
     scriptencoding utf-8
     set encoding=utf-8
 
-     set viminfo='100,<1000,s10,h
+    set viminfo='100,<1000,s10,h
 
     syntax enable
 
@@ -133,6 +133,7 @@ call pathogen#infect()
     set foldnestmax=10      "deepest fold is 10 levels
     set nofoldenable        "dont fold by default
     set foldlevel=1         "this is just what i use
+    au FileType javascript call JavaScriptFold()
 
     "jsbeautify
     autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
@@ -141,4 +142,10 @@ call pathogen#infect()
     autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
     autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
     autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+    autocmd FileType mss vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+    autocmd FileType mss nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+    "Filetypes
+    au BufRead,BufNewFile *.mss set filetype=carto
+    au BufRead,BufNewFile *.{json,geojson} set filetype=javascript
 " }
