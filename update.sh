@@ -58,14 +58,14 @@ fi
 echo '----------------------------'
 echo 'Adding bash completion and colorizing files'
 echo '----------------------------'
-curl -Sso ~/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-curl -Sso ~/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
+curl -Sso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+curl -Sso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
 
 echo '----------------------------'
 echo 'Adding bash completion and colorizing files'
 echo '----------------------------'
-curl -Sso ~/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
-curl -Sso ~/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
+curl -Sso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
+curl -Sso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
 
 
 echo '------------------------'
