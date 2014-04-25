@@ -1,7 +1,7 @@
 #.bashrc file
 #
 # commandPrompt {
-    source ~/dotfiles/bash/scripts/git-completion.bash # Git tab completion
+    source $HOME/dotfiles/bash/scripts/git-completion.bash # Git tab completion
     [ -z "$PS1" ] && return # If not running interactively, don't do anything
 
     # Determine if we're using Darwin or Linux, and set the color prompt accordingly
@@ -29,7 +29,7 @@
 
 # customFunctions {
     # Add a bunch of color variables
-    source ~/dotfiles/bash/scripts/bash_colors.sh
+    source $HOME/dotfiles/bash/scripts/bash_colors.sh
 # }
 
 # historySettings {
@@ -43,7 +43,7 @@
 # colorSupport {
     # enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
-        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+        test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
         #alias dir='dir --color=auto'
         #alias vdir='vdir --color=auto'
 
@@ -52,7 +52,7 @@
         alias egrep='egrep --color=auto'
         alias ccat='pygmentize'
 
-        eval `dircolors ~/dotfiles/bash/scripts/dircolors.256dark`
+        eval `dircolors $HOME/dotfiles/bash/scripts/dircolors.256dark`
     fi
 # }
 
@@ -80,8 +80,8 @@
 # customFunctions {
     # This script yells at me when I type some common commands in without fully
     # thinking about what I'm doing
-    source ~/dotfiles/bash/scripts/customfunctions.sh
-    source ~/dotfiles/bash/scripts/custom-git-functions.sh
+    source $HOME/dotfiles/bash/scripts/customfunctions.sh
+    source $HOME/dotfiles/bash/scripts/custom-git-functions.sh
 # }
 
 # rvm {
