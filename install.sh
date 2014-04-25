@@ -9,36 +9,36 @@ this_host=$(hostname -f)
 this_date=$(date -u '+%Y%m%d')
 
 # Create the directories for backing up
-mkdir -p  ~/dotfiles/backups/$this_host
-mkdir -p  ~/dotfiles/backups/$this_host/$this_date
+mkdir -p  $HOME/dotfiles/backups/$this_host
+mkdir -p  $HOME/dotfiles/backups/$this_host/$this_date
 
 # Bash Files
-mv ~/.bashrc ~/dotfiles/backups/$this_host/$this_date/.bashrc
-mv ~/.bash_profile ~/dotfiles/backups/$this_host/$this_date/.bash_profile
-#mv ~/.bash_alias ~/dotfiles/backups/$this_host/$this_date/.bash_aliases
+mv $HOME/.bashrc $HOME/dotfiles/backups/$this_host/$this_date/.bashrc
+mv $HOME/.bash_profile $HOME/dotfiles/backups/$this_host/$this_date/.bash_profile
+#mv $HOME/.bash_alias $HOME/dotfiles/backups/$this_host/$this_date/.bash_aliases
 
 # vim files
-mv ~/.vimrc ~/dotfiles/backups/$this_host/$this_date/.vimrc
-mv ~/.vim ~/dotfiles/backups/$this_host/$this_date/.vim
+mv $HOME/.vimrc $HOME/dotfiles/backups/$this_host/$this_date/.vimrc
+mv $HOME/.vim $HOME/dotfiles/backups/$this_host/$this_date/.vim
 #
 # other files
-mv ~/.jshintrc ~/dotfiles/backups/$this_host/$this_date/.jshintrc
-mv ~/.tmux.confg ~/dotfiles/backups/$this_host/$this_date/.tmux.conf
+mv $HOME/.jshintrc $HOME/dotfiles/backups/$this_host/$this_date/.jshintrc
+mv $HOME/.tmux.confg $HOME/dotfiles/backups/$this_host/$this_date/.tmux.conf
 # }
 
 # CREATE SYMLINKS {
 #
 # Bash
-ln -s ~/dotfiles/bash/bashrc ~/.bashrc
-#ln -s ~/dotfiles/bash/aliases ~/.bash_aliases
-ln -s ~/dotfiles/bash/bash_profile ~/.bash_profile
+ln -s $HOME/dotfiles/bash/bashrc $HOME/.bashrc
+#ln -s $HOME/dotfiles/bash/aliases $HOME/.bash_aliases
+ln -s $HOME/dotfiles/bash/bash_profile $HOME/.bash_profile
 # vim
-ln -s ~/dotfiles/vim ~/.vim
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s $HOME/dotfiles/vim $HOME/.vim
+ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 #
 # other
-ln -s ~/dotfiles/other/jshintrc ~/.jshintrc
-ln -s ~/dotfiles/other/tmux.conf ~/.tmux.conf
+ln -s $HOME/dotfiles/other/jshintrc $HOME/.jshintrc
+ln -s $HOME/dotfiles/other/tmux.conf $HOME/.tmux.conf
 # }
 
 # Run an update
