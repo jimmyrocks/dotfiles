@@ -6,10 +6,10 @@ echo '---------------------------'
 if [install_esri == 'true']; then
   if [ `uname -m` = "x86_64" ]; then
     echo "Downloading FileGDB_API_1_3-64.tar.gz from ESRI"
-    curl -o ~/tmp/FileGDB_API_1_3.tar.gz http://downloads2.esri.com/Software/FileGDB_API_1_3-64.tar.gz
+    curl -o $HOME/tmp/FileGDB_API_1_3.tar.gz http://downloads2.esri.com/Software/FileGDB_API_1_3-64.tar.gz
   else
     echo "Downloading FileGDB_API_1_3-32.tar.gz from ESRI"
-    curl -o ~/tmp/FileGDB_API_1_3.tar.gz http://downloads2.esri.com/Software/FileGDB_API_1_3-32.tar.gz
+    curl -o $HOME/tmp/FileGDB_API_1_3.tar.gz http://downloads2.esri.com/Software/FileGDB_API_1_3-32.tar.gz
   fi
 
   echo '---------------------------'
@@ -17,8 +17,8 @@ if [install_esri == 'true']; then
   echo '---------------------------'
   # http://hydrogeotools.blogspot.com/2013/07/install-gdal-with-file-gdb-and.html
   mkdir -p /usr/local/ # not sure why you wouldn't have this?
-  tar -zxvf ~/tmp/FileGDB_API_1_3.tar.gz -C /usr/local/
-  rm ~/tmp/FileGDB_API_1_3.tar.gz
+  tar -zxvf $HOME/tmp/FileGDB_API_1_3.tar.gz -C /usr/local/
+  rm $HOME/tmp/FileGDB_API_1_3.tar.gz
 
   # Add the line to ldconfig
   if grep -Fxq "/usr/local/FileGDB_API/lib" /etc/ld.so.conf; then
@@ -32,8 +32,8 @@ echo '---------------------------'
 # Get gdal!
 apt-get remove gdal-bin #In case you have an older verion
 sudo apt-get install subversion
-svn checkout https://svn.osgeo.org/gdal/trunk/gdal ~/tmp/gdal
-cd ~/tmp/gdal
+svn checkout https://svn.osgeo.org/gdal/trunk/gdal $HOME/tmp/gdal
+cd $HOME/tmp/gdal
 ./configure
 make
 make install
