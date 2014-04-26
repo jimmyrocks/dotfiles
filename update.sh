@@ -1,4 +1,3 @@
-this_dir=`pwd`
 # This will go through all the vim bundles and update them
 
 git submodule init
