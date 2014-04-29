@@ -133,7 +133,6 @@ call pathogen#infect()
     set foldnestmax=10      "deepest fold is 10 levels
     set nofoldenable        "dont fold by default
     set foldlevel=1         "this is just what i use
-    au FileType javascript call JavaScriptFold()
 
     "jsbeautify
     autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>

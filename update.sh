@@ -39,6 +39,8 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------'
     pip install Distribute
     pip install flake8 --upgrade
+    mkdir -p $HOME/dotfiles/vim/bundle/tern_for_vim/node_modules
+    npm --prefix $HOME/dotfiles/vim/bundle/tern_for_vim/ install
 
     # get node.js stuff for jshint
     echo '-------------'
@@ -48,25 +50,29 @@ if [ $OS_NAME = "Linux" ]; then
     npm install --global ext
     npm install --global jquery
 
+    echo '----------------------------'
+    echo 'Adding bash completion and colorizing files'
+    echo '----------------------------'
+    echo 'git-completion'
+    curl -Sso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+    echo 'dircolors.256dark'
+    curl -Sso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
+
+    echo '----------------------------'
+    echo 'Adding vim syntax files'
+    echo '----------------------------'
+    mkdir -p $HOME/dotfiles/vim/syntax
+    echo 'Python'
+    curl -Sso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
+    echo 'Carto'
+    curl -Sso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
+
     # Set timezone
     echo '---------------'
     echo 'Setting timezone'
     echo '---------------'
     dpkg-reconfigure tzdata
 fi
-
-echo '----------------------------'
-echo 'Adding bash completion and colorizing files'
-echo '----------------------------'
-curl -Sso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-curl -Sso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
-
-echo '----------------------------'
-echo 'Adding bash completion and colorizing files'
-echo '----------------------------'
-curl -Sso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
-curl -Sso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
-
 
 echo '------------------------'
 echo 'Everything is up to date'
