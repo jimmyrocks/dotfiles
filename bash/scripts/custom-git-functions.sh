@@ -54,7 +54,7 @@
     alias git.a.='git add .'
     alias git.ps='git push `__git_remote_branch`'
     alias git.pl='git pull `__git_remote_branch`'
-    alias git.pp='git pull `__git_remote_branch`; git push `__git_remote_branch`'
+    alias git.pp="git pull `__git_remote_branch`; git push `__git_remote_branch`"
     alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
     alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -79,3 +79,5 @@
     "$__bash_cyan"git.acm"$__bash_red" = "$__bash_yellow"git add [FILE], commits with [COMMENT]
     "$__bash_cyan"git.loop"$__bash_red" = "$__bash_yellow"Loops through all files that are not yet committed
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
+
+    alias git.key='eval $(ssh-agent) > /dev/null; ssh-add /home/vagrant/.ssh/github_ssh/id_rsa'
