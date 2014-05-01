@@ -82,6 +82,7 @@
     # thinking about what I'm doing
     source $HOME/dotfiles/bash/scripts/customfunctions.sh
     source $HOME/dotfiles/bash/scripts/custom-git-functions.sh
+    source $HOME/dotfiles/bash/scripts/custom-tmux-functions.sh
 # }
 
 # rvm {
@@ -99,23 +100,3 @@ if [[ `tmux list-sessions 2>/dev/null` != "" ]]; then
   tmux list-sessions
   echo "╚════════════════════════════════════════════════════════════════════════════╝"
 fi
-  
-# Use tmux on Linux only
-#if [ $OS_NAME = "Linux" ]; then
-#  export TERM="xterm-256color"
-#  if [ -z "$TMUX" ]; then
-#    # http://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
-#    base_session='base_session'
-#    # Create a new session if it doesn't exist
-#    tmux has-session -t $base_session || tmux new-session -d -s $base_session
-#    # Are there any clients connected already?
-#    client_cnt=$(tmux list-clients | wc -l)
-#    if [ $client_cnt -ge 1 ]; then
-#        session_name=$base_session"-"$client_cnt
-#        tmux new-session -d -t $base_session -s $session_name
-#        tmux -u attach-session -t $session_name \; set-option destroy-unattached
-#    else
-#        tmux -u attach-session -t $base_session
-#    fi
-#  fi
-#fi
