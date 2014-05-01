@@ -81,6 +81,7 @@
     # This script yells at me when I type some common commands in without fully
     # thinking about what I'm doing
     source $HOME/dotfiles/bash/scripts/customfunctions.sh
+    # Other tools
     source $HOME/dotfiles/bash/scripts/custom-git-functions.sh
     source $HOME/dotfiles/bash/scripts/custom-tmux-functions.sh
 # }
