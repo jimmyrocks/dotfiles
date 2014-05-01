@@ -54,7 +54,7 @@
     alias git.a.='git add .'
     alias git.ps='git push `__git_remote_branch`'
     alias git.pl='git pull `__git_remote_branch`'
-    alias git.pp="git pull `__git_remote_branch`; git push `__git_remote_branch`"
+    alias git.pp='git pull `__git_remote_branch`; git push `__git_remote_branch`'
     alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
     alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -62,7 +62,6 @@
     alias git.cam='git commit -am'
     alias git.s='git status'
     alias git.d='git diff'
-    alias exit-tmux='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
     alias git.='echo -e $__bash_green"git. shortcuts / commands
     "$__bash_cyan"git.a"$__bash_red" = "$__bash_yellow"git add
     "$__bash_cyan"git.a."$__bash_red" = "$__bash_yellow"git add .
@@ -81,3 +80,4 @@
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
 
     alias git.key='eval $(ssh-agent) > /dev/null; ssh-add /home/vagrant/.ssh/github_ssh/id_rsa'
+    alias exit-tmux='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
