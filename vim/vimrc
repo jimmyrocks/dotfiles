@@ -147,4 +147,7 @@ call pathogen#infect()
     "Filetypes
     au BufRead,BufNewFile *.mss set filetype=carto
     au BufRead,BufNewFile *.{json,geojson} set filetype=javascript
+
+    " Signify
+    let g:signify_vcs_list = [ 'git' ]
 " }
