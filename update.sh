@@ -54,18 +54,18 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding bash completion and colorizing files'
     echo '----------------------------'
     echo 'git-completion'
-    curl -Sso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+    curl -LSso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
     echo 'dircolors.256dark'
-    curl -Sso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
+    curl -LSso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
 
     echo '----------------------------'
     echo 'Adding vim syntax files'
     echo '----------------------------'
     mkdir -p $HOME/dotfiles/vim/syntax
     echo 'Python'
-    curl -Sso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
+    curl -LSso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
     echo 'Carto'
-    curl -Sso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
+    curl -LSso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
 
     # Set timezone
     echo '---------------'
