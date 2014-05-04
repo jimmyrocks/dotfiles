@@ -29,6 +29,11 @@ function tmux.l(){
     echo "╚════════════════════════════════════════════════════════════════════════════╝"
     echo -n "Which view do you want? ('new' for new, [enter] for none): "
     read -r view
+  else
+    for line in `tmux list-sessions`; do
+      COUNTER=$((COUNTER+1))
+      SESSIONS[$COUNTER]=`echo $line | sed 's/:.*//g'`
+    done
   fi
 
   if [[ $view == "new" ]]; then
