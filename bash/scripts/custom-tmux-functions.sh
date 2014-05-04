@@ -1,9 +1,15 @@
+function tmux.new(){
+  tmux.l new $1
+}
+
 function tmux.l(){
 
 # List the Available Sessions (if there are any?)
   IFS=$'\n'
   COUNTER=0
   SESSIONS[0]=""
+  view=$1
+  session_name=$2
 
   if [[ `tmux list-sessions 2>/dev/null` == "" ]]; then
     read -r -e -p "tmux not running, would you like to start tmux? (y/N): " start_tmux
@@ -12,7 +18,8 @@ function tmux.l(){
     else
       view='0'
     fi
-  else
+  fi
+  if [[ -z "$view" ]]; then
     echo "╔════════════════════════════════════════════════════════════════════════════╗"
     for line in `tmux list-sessions`; do
       COUNTER=$((COUNTER+1))
@@ -25,7 +32,9 @@ function tmux.l(){
   fi
 
   if [[ $view == "new" ]]; then
-    read -r -e -p "What do you want to name this new session? " session_name
+    if [[ -z "session_name" ]]; then
+      read -r -e -p "What do you want to name this new session? " session_name
+    fi
     tmux new-session -s $session_name
   elif [[ ${SESSIONS["$view"]} != "" ]]; then
     if [ -z "$TMUX" ]; then
