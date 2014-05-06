@@ -79,5 +79,5 @@
     "$__bash_cyan"git.loop"$__bash_red" = "$__bash_yellow"Loops through all files that are not yet committed
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
 
-    alias git.key='eval $(ssh-agent) > /dev/null; ssh-add /home/vagrant/.ssh/github_ssh/id_rsa'
+    alias git.key='eval $(ssh-agent) > /dev/null; ssh-add $HOME/.ssh/github_ssh/id_rsa'
     alias exit-tmux='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
