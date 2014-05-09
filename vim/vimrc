@@ -96,9 +96,8 @@ call pathogen#infect()
     noremap gn :NERDTree<Cr>
 
     " Tabbed editing
-    map  <C-l> :tabn<CR>
-    map  <C-h> :tabp<CR>
-    map  <C-n> :tabnew<CR>
+    map  <C-l> :bn<CR>
+    map  <C-h> :bp<CR>
     map  <C-t> :NERDTreeToggle<cr>
 " }
 
