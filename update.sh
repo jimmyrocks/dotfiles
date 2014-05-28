@@ -49,6 +49,7 @@ if [ $OS_NAME = "Linux" ]; then
     npm install --global jshint
     npm install --global ext
     npm install --global jquery
+    npm install --global http-server
 
     echo '----------------------------'
     echo 'Adding bash completion and colorizing files'
