@@ -62,7 +62,7 @@ function gut {
 
 function serveHttp {
   if [[ $1 == "" ]]; then
-    port=3000
+    port=8000
   else
     port=$1
   fi
