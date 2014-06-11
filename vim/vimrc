@@ -52,11 +52,13 @@ call pathogen#infect()
                 \let &nu=g:old_nu <Bar>
                 \let &mouse=g:old_mouse <Bar>
                 \let &list=g:old_list <Bar>
-                \echo "(nu="g:old_nu") (mouse="g:old_mouse") (list="g:old_list") (paste= 0 )"<bar>
+                \call ToggleSignify(g:old_signify) <Bar>
+                \echo "(nu="g:old_nu") (mouse="g:old_mouse") (list="g:old_list") (paste= 0 ) (signify="g:old_list")" <bar>
                 \else <Bar>
                 \let g:old_nu=&nu <Bar>
                 \let g:old_mouse=&mouse <Bar>
                 \let g:old_list=&list <Bar>
+                \call ToggleSignify(0) <Bar>
                 \let &nu=0 <Bar>
                 \let &mouse="" <Bar>
                 \let &list=0 <Bar>
@@ -150,4 +152,19 @@ call pathogen#infect()
 
     " Signify
     let g:signify_vcs_list = [ 'git' ]
+    let g:signify_disable_by_default = 0 "Don't run Sy by default, toggle it anytime via :SignifyToggle.
+
+    let g:signify_status= (g:signify_disable_by_default + 1) % 2 " Sets the signify remember mode
+    function! ToggleSignify(new_status)
+      if a:new_status==g:signify_status
+        echom "no change"
+      else
+        if g:signify_status==0
+          let g:signify_status=1 " Sets the signify remember mode
+        else
+          let g:signify_status=0 " Sets the signify remember mode
+        endif
+        :SignifyToggle
+      endif
+    endfunction
 " }
