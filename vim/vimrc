@@ -52,7 +52,7 @@ call pathogen#infect()
                 \let &nu=g:old_nu <Bar>
                 \let &mouse=g:old_mouse <Bar>
                 \let &list=g:old_list <Bar>
-                \call ToggleSignify(g:old_signify) <Bar>
+                \call ToggleSignify(1) <Bar>
                 \echo "(nu="g:old_nu") (mouse="g:old_mouse") (list="g:old_list") (paste= 0 ) (signify="g:old_list")" <bar>
                 \else <Bar>
                 \let g:old_nu=&nu <Bar>
