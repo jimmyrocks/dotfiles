@@ -95,11 +95,13 @@ call pathogen#infect()
     let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
     noremap gn :NERDTree<Cr>
 
-    " Tabbed editing
-    map  <C-l> :tabn<CR>
-    map  <C-h> :tabp<CR>
-    map  <C-n> :tabnew<CR>
+    " Switch Between Buffers
+    map  <C-l> :bn<CR>
+    map  <C-h> :bp<CR>
     map  <C-t> :NERDTreeToggle<cr>
+
+    "  How can I close vim if the only window left open is a NERDTree?
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " }
 
 " tmuxline {
