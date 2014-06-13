@@ -61,8 +61,14 @@ function gut {
 }
 
 function serveHttp {
+  if [[ $1 == "" ]]; then
+    port=8000
+  else
+    port=$1
+  fi
   thisip
-  python -m SimpleHTTPServer $1
+  http-server `pwd` -p $port
+  #python -m SimpleHTTPServer $1
 }
 
 function thisip {
