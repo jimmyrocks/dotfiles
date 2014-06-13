@@ -149,8 +149,13 @@ call pathogen#infect()
     "Filetypes
     au BufRead,BufNewFile *.mss set filetype=carto
     au BufRead,BufNewFile *.{json,geojson} set filetype=javascript
+" }
 
-    " Signify
+" Functions {
+    " https://github.com/scrooloose/nerdtree/blob/master/README.markdown
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+    "Signify
     let g:signify_vcs_list = [ 'git' ]
     let g:signify_disable_by_default = 0 "Don't run Sy by default, toggle it anytime via :SignifyToggle.
 
@@ -167,4 +172,5 @@ call pathogen#infect()
         :SignifyToggle
       endif
     endfunction
+
 " }
