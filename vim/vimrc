@@ -167,6 +167,11 @@ call pathogen#infect()
     "  JK motions: Line motions
       map <Leader>j <Plug>(easymotion-j)
       map <Leader>k <Plug>(easymotion-k)
+
+    " Keep yankring files in the dotfiles directory (this needs a
+    " cooresponding gitignore unless you are working on completely open source
+    " stuff!
+    let g:yankring_history_dir = '~/dotfiles/vim'
 " }
 
 " Functions {

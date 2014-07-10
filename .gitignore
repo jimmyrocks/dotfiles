@@ -7,3 +7,4 @@ bash/scripts/git-completion.bash
 bash/scripts/dircolors.256dark
 vim/syntax/carto.vim
 vim/syntax/python.vim
+vim/yankring_history_v2.txt
