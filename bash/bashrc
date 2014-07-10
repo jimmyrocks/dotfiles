@@ -99,8 +99,6 @@ export TERM="xterm-256color"
 if [[ `tmux list-sessions 2>/dev/null` != "" ]]; then
   if [ -z "$TMUX" ]; then
     echo "There are tmux sessions running"
-    echo "╔════════════════════════════════════════════════════════════════════════════╗"
-    echo ' '`tmux list-sessions`
-    echo "╚════════════════════════════════════════════════════════════════════════════╝"
+    tmux.l "" "" t
   fi
 fi
