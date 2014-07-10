@@ -2,6 +2,10 @@ function tmux.new(){
   tmux.l new $1
 }
 
+function tmux.s(){
+  tmux.l 0 $1
+}
+
 function tmux.l(){
 
 # List the Available Sessions (if there are any?)
@@ -43,7 +47,7 @@ function tmux.l(){
     if [[ -z "$session_name" ]]; then
       read -r -e -p "What do you want to name this new session? " session_name
     fi
-    tmux new-session -d -s "$session_name"
+    TMUX= tmux new-session -d -s "$session_name"
   elif [[ ${SESSIONS["$view"]} != "" ]]; then
     session_name="${SESSIONS["$view"]}"
   fi
