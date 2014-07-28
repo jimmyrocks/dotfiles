@@ -55,7 +55,7 @@
     alias git.ps='git push `__git_remote_branch`'
     alias git.pl='git pull `__git_remote_branch`'
     alias git.pp='git pull `__git_remote_branch`; git push `__git_remote_branch`'
-    alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+    alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
     alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     alias git.cm='git commit -m'
