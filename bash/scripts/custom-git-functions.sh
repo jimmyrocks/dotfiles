@@ -49,6 +49,12 @@
       git commit -m "$2";
     }
 
+    function git.type () {
+      # this is useful for when you would like to get a list of all files that have been modified, in order to edit/remove/commit them
+      git status | grep "#\s*$1:" | perl -p -e "s/#\s+?$1:\s+?//g" | perl -p -e "s/\n//g"
+    }
+
+
 # git aliases
     alias git.a='git add'
     alias git.a.='git add .'
@@ -77,6 +83,7 @@
     "$__bash_cyan"git.adc"$__bash_red" = "$__bash_yellow"git add [FILE], shows diff, prompts for message
     "$__bash_cyan"git.acm"$__bash_red" = "$__bash_yellow"git add [FILE], commits with [COMMENT]
     "$__bash_cyan"git.loop"$__bash_red" = "$__bash_yellow"Loops through all files that are not yet committed
+    "$__bash_cyan"git.type"$__bash_red" = "$__bash_yellow"Returns a list of all files with that status (modified, both modified, new file, etc.)
     "$__bash_cyan"git."$__bash_red" = "$__bash_yellow"this message"$__bash_normal'
 
     alias git.key='eval $(ssh-agent) > /dev/null; ssh-add $HOME/.ssh/github_ssh/id_rsa'
