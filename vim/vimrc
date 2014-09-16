@@ -174,7 +174,7 @@ call pathogen#infect()
     " Keep yankring files in the dotfiles directory (this needs a
     " cooresponding gitignore unless you are working on completely open source
     " stuff!
-    let g:yankring_history_dir = '~/dotfiles/vim'
+    " let g:yankring_history_dir = '~/dotfiles/vim'
 " }
 
 " Functions {
