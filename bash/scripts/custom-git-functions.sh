@@ -33,6 +33,20 @@
       done
     }
 
+    function git.quickloop () {
+      git_dir=`git rev-parse --show-toplevel`
+      git_files=`git status --porcelain | grep '^[ M]M ' | sed -e 's/^[ M]M\s//g'`
+      for git_file in $git_files; do
+        git add $git_dir"/"$git_file
+        comment="Update $git_file"
+        if [ -n "$1" ]; then
+          comment=$1": "$comment
+        fi
+        git commit -m "$comment"
+      done
+    }
+
+
     function git.adc () {
       echo -e $__bash_yellow"╔════════════════════════════════════════════════════════════════════════════╗"$__bash_normal
       echo -e $__bash_cyan"Diff on $1"$__bash_normal
