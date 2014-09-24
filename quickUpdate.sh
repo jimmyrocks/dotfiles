@@ -12,5 +12,5 @@ source $thisDir"/bash/scripts/custom-git-functions.sh"
 #echo 'thisUserGroup'
 #echo $thisUserGroup
 cd $thisDir
-git.key && git.loop && git.pp && sudo chown -R $thisUserGroup $thisDir && sudo bash update.sh && git.loop && git.pp
+git.key && git.loop && git.pp && sudo chown -R $thisUserGroup $thisDir && sudo bash update.sh quick && git.quickloop && git.pp
 cd $CWD
