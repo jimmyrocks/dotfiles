@@ -69,10 +69,12 @@ if [ $OS_NAME = "Linux" ]; then
     curl -LSso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
 
     # Set timezone
-    echo '---------------'
-    echo 'Setting timezone'
-    echo '---------------'
-    dpkg-reconfigure tzdata
+    if [ $1 <> "quick" ]; then
+      echo '---------------'
+      echo 'Setting timezone'
+      echo '---------------'
+      dpkg-reconfigure tzdata
+    fi
 fi
 
 echo '------------------------'
