@@ -75,6 +75,8 @@ if [ $OS_NAME = "Linux" ]; then
       echo '---------------'
       dpkg-reconfigure tzdata
     fi
+    # Set system clock (after the timezone is set, of course)
+    ntpdate pool.ntp.org
 fi
 
 echo '------------------------'
