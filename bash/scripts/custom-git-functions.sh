@@ -68,13 +68,24 @@
       git status | grep "#\s*$1:" | perl -p -e "s/#\s+?$1:\s+?//g" | perl -p -e "s/\n//g"
     }
 
+    function git.pp () {
+      # pulls and pushes git branch
+      if [ -z `ssh-add -l 2> /dev/null` ]; then
+        eval $(ssh-agent) > /dev/null
+        ssh-add $HOME/.ssh/github_ssh/id_rsa
+      else
+        echo '-----------------'
+      fi
+      git pull `__git_remote_branch`
+      git push `__git_remote_branch`
+    }
+
 
 # git aliases
     alias git.a='git add'
     alias git.a.='git add .'
     alias git.ps='git push `__git_remote_branch`'
     alias git.pl='git pull `__git_remote_branch`'
-    alias git.pp='git pull `__git_remote_branch`; git push `__git_remote_branch`'
     alias git.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
     alias git.l2="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
