@@ -70,11 +70,9 @@
 
     function git.pp () {
       # pulls and pushes git branch
-      if [ -z `ssh-add -l 2> /dev/null` ]; then
+      if [ -z "`ssh-add -l 2> /dev/null`" ]; then
         eval $(ssh-agent) > /dev/null
         ssh-add $HOME/.ssh/github_ssh/id_rsa
-      else
-        echo '-----------------'
       fi
       git pull `__git_remote_branch`
       git push `__git_remote_branch`
