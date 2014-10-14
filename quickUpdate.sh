@@ -12,5 +12,9 @@ source $thisDir"/bash/scripts/custom-git-functions.sh"
 #echo 'thisUserGroup'
 #echo $thisUserGroup
 cd $thisDir
-git.key && git.loop && git.pp && sudo chown -R $thisUserGroup $thisDir && sudo bash update.sh quick && git.quickloop && git.pp
+if [ -z "`ssh-add -l 2> /dev/null`" ]; then
+  echo `ssh-add -l 2> /dev/null`
+  git.key
+fi
+git.loop && git.pp && sudo chown -R $thisUserGroup $thisDir && sudo bash update.sh quick && git.quickloop && git.pp
 cd $CWD
