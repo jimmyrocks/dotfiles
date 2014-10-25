@@ -17,6 +17,7 @@ call pathogen#infect()
     " solarized options 
     let g:solarized_termtrans = 1
     let g:solarized_termcolors = 256
+    let g:vim_json_syntax_conceal = 0
     colorscheme solarized
 " }
 
@@ -154,7 +155,7 @@ call pathogen#infect()
 
     "Filetypes
     au BufRead,BufNewFile *.mss set filetype=carto
-    au BufRead,BufNewFile *.{json,geojson} set filetype=javascript
+    au BufRead,BufNewFile *.{json,geojson} set filetype=json
 
     "Ctrl-P
     set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
