@@ -47,6 +47,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding nodejs tools'
     echo '-------------'
     npm install --global jshint
+    npm install --global jsonlint
     npm install --global ext
     npm install --global jquery
     npm install --global http-server
