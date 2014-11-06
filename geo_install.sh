@@ -1,5 +1,5 @@
 script_pwd=`pwd`
-install_esri='false'
+install_esri='true'
 echo '---------------------------'
 echo 'Installing gdal with FileGDB Support'
 echo '---------------------------'
