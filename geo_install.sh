@@ -37,6 +37,7 @@ cd $HOME/tmp/gdal
 ./configure --with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=yes
 make install
 ldconfig
+sudo ln -s /usr/lib/libproj.so.0 /usr/lib/libproj.so
 
 # All done, run tests
 echo '---------------------------'
