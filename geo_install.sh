@@ -1,10 +1,10 @@
 script_pwd=`pwd`
-install_esri='false'
+install_esri='true'
 echo '---------------------------'
 echo 'Installing gdal with FileGDB Support'
 echo '---------------------------'
-if [install_esri == 'true']; then
-  if [ `uname -m` = "x86_64" ]; then
+if [ $install_esri == "true" ]; then
+  if [ `uname -m` == "x86_64" ]; then
     echo "Downloading FileGDB_API_1_3-64.tar.gz from ESRI"
     curl -o $HOME/tmp/FileGDB_API_1_3.tar.gz http://downloads2.esri.com/Software/FileGDB_API_1_3-64.tar.gz
   else
@@ -30,14 +30,14 @@ echo '---------------------------'
 echo 'Installing gdal'
 echo '---------------------------'
 # Get gdal!
-apt-get remove gdal-bin #In case you have an older verion
-sudo apt-get install subversion
+sudo apt-get remove gdal-bin #In case you have an older verion
+sudo apt-get -y install libsqlite3-dev libspatialite-dev libspatialite5 libpq-dev libpq5 libcurl3 subversion
 svn checkout https://svn.osgeo.org/gdal/trunk/gdal $HOME/tmp/gdal
 cd $HOME/tmp/gdal
-./configure
-make
+./configure --with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=yes
 make install
 ldconfig
+sudo ln -s /usr/lib/libproj.so.0 /usr/lib/libproj.so
 
 # All done, run tests
 echo '---------------------------'
