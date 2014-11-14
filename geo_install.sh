@@ -1,5 +1,6 @@
 script_pwd=`pwd`
 install_esri='true'
+mkdir -p $HOME/tmp
 echo '---------------------------'
 echo 'Installing gdal with FileGDB Support'
 echo '---------------------------'
