@@ -34,6 +34,8 @@ echo '---------------------------'
 sudo apt-get remove gdal-bin #In case you have an older verion
 sudo apt-get -y install libsqlite3-dev libspatialite-dev libspatialite5 libpq-dev libpq5 libcurl3 subversion
 svn checkout https://svn.osgeo.org/gdal/trunk/gdal $HOME/tmp/gdal
+# You can also download it from here: (will update this later)
+#    http://download.osgeo.org/gdal/CURRENT/gdal-1.11.1.tar.gz
 cd $HOME/tmp/gdal
 ./configure --with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=yes --with-fgdb=/usr/local/FileGDB_API
 make
