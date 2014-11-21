@@ -98,7 +98,8 @@
 # }
 
 # default editor {
-    export EDITOR=vim
+    export VISUAL=vim
+    export EDITOR=$VISUAL
 # }
 
 # Too much TMUX, this will need to be replaced with tmux_tools
