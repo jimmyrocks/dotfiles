@@ -97,6 +97,10 @@
     export PATH=/opt/flex/bin:$PATH
 # }
 
+# default editor {
+    export EDITOR=vim
+# }
+
 # Too much TMUX, this will need to be replaced with tmux_tools
 export TERM="xterm-256color"
 if [[ `tmux list-sessions 2>/dev/null` != "" ]]; then
