@@ -11,6 +11,7 @@ source $thisDir"/bash/scripts/custom-git-functions.sh"
 #echo $thisDir
 #echo 'thisUserGroup'
 #echo $thisUserGroup
+sudo echo "**** Quick Update ***"
 cd $thisDir
 if [ -z "`ssh-add -l 2> /dev/null`" ]; then
   echo `ssh-add -l 2> /dev/null`
