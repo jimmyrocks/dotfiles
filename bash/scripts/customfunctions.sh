@@ -67,7 +67,7 @@ function serveHttp {
     port=$1
   fi
   thisip
-  http-server `pwd` -p $port
+  http-server "`pwd`" -p $port
   #python -m SimpleHTTPServer $1
 }
 
