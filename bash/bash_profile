@@ -5,4 +5,4 @@ source $HOME/.bashrc
 export NVM_DIR="/home/jim/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source /home/jmcandrew/.profile
+# source /home/jmcandrew/.profile
