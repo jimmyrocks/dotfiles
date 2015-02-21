@@ -156,6 +156,7 @@ call pathogen#infect()
     "Filetypes
     au BufRead,BufNewFile *.mss set filetype=carto
     au BufRead,BufNewFile *.{json,geojson} set filetype=json
+    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
     "Ctrl-P
     set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
