@@ -68,6 +68,8 @@ if [ $OS_NAME = "Linux" ]; then
     curl -LSso $HOME/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
     echo 'Carto'
     curl -LSso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
+    echo 'nginx'
+    curl -LSso $HOME/dotfiles/vim/syntax/nginx.vim https://raw.githubusercontent.com/vim-scripts/nginx.vim/master/syntax/nginx.vim
 
     # Set timezone
     if [ "$1" != "quick" ]; then
