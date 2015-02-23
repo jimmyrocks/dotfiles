@@ -65,7 +65,7 @@
 
     function git.type () {
       # this is useful for when you would like to get a list of all files that have been modified, in order to edit/remove/commit them
-      git status | grep "\s*$1:" | perl -p -e "s/\s+?$1:\s+?//g" | perl -p -e "s/\n//g"
+      git status | grep "\s*$1:" | perl -p -e "s/\s+?$1:\s+?//g" | perl -p -e "s/^\s{1,}(.+?)\n$/\"\1\" /g"
     }
 
     function git.pp () {
