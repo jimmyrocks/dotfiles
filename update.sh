@@ -37,7 +37,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------'
     echo 'Adding vim tools'
     echo '----------------'
-    pip install Distribute
+    pip install Distribute --upgrade
     pip install flake8 --upgrade
     mkdir -p $HOME/dotfiles/vim/bundle/tern_for_vim/node_modules
     npm --prefix $HOME/dotfiles/vim/bundle/tern_for_vim/ install
