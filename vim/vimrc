@@ -31,8 +31,13 @@ call pathogen#infect()
 " }
 
 " Usability {
-    " Going to try to jk remap thing, see how I like it
-    imap jk <Esc>
+    " Ctrl-j and ctrl-k moves a line up and down
+    nnoremap <c-j> :m .+1<CR>==
+    nnoremap <c-k> :m .-2<CR>==
+    inoremap <c-j> <Esc>:m .+1<CR>==gi
+    inoremap <c-k> <Esc>:m .-2<CR>==gi
+    vnoremap <c-j> :m '>+1<CR>gv=gv
+    vnoremap <c-k> :m '<-2<CR>gv=gv
 
     set ruler "show where we are
     set laststatus=2 "display the status line always
