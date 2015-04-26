@@ -20,9 +20,10 @@
 [submodule "bash/scripts/dircolorsdb"]
 	path = bash/scripts/dircolorsdb
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule "vim/bundle/jshint2"]
-	path = vim/bundle/jshint2
-	url = https://github.com/Shutnik/jshint2.vim.git
+[submodule "vim/bundle/jshint"]
+	path = vim/bundle/jshint
+	url = https://github.com/walm/jshint.vim.git
+	ignore = dirty
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
@@ -77,3 +78,6 @@
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/jshint2.vim"]
+	path = vim/bundle/jshint2.vim
+	url = https://github.com/Shutnik/jshint2.vim.git
