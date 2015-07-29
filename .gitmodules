@@ -81,3 +81,6 @@
 [submodule "vim/bundle/jshint2.vim"]
 	path = vim/bundle/jshint2.vim
 	url = https://github.com/Shutnik/jshint2.vim.git
+[submodule "vim/bundle/vim-jsformat"]
+	path = vim/bundle/vim-jsformat
+	url = https://github.com/jimmyrocks/vim-jsformat.git
