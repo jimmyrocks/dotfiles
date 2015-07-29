@@ -1,5 +1,5 @@
 " Basic Stuff {
-call pathogen#infect()
+    execute pathogen#infect()
     syntax on
     filetype plugin indent on
     set nocompatible "vim, not vi
@@ -149,8 +149,10 @@ call pathogen#infect()
     let g:vim_markdown_initial_foldlevel=100 "Markdown plugin defaults to being folded
 
     "jsbeautify
-    autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-    autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr>
+    autocmd FileType javascript vnoremap <buffer>  <Leader>f :call RangeJsFormat()<cr> 
+    autocmd FileType javascript nnoremap <buffer>  <Leader>f :call JsFormat()<cr>
+    autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr> :call RangeJsFormat()<cr>
+    autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr> :call JsFormat()<cr>
     autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
     autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
     autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
@@ -197,6 +199,17 @@ call pathogen#infect()
 " Functions {
     " https://github.com/scrooloose/nerdtree/blob/master/README.markdown
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+    " Syntastic
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 0
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_javascript_checkers = ['semistandard']
 
     "Signify
     let g:signify_vcs_list = [ 'git' ]
