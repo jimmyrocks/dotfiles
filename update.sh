@@ -51,6 +51,7 @@ if [ $OS_NAME = "Linux" ]; then
     npm install --global ext
     npm install --global jquery
     npm install --global http-server
+    npm install --global semistandard
 
     echo '----------------------------'
     echo 'Adding bash completion and colorizing files'
@@ -70,6 +71,8 @@ if [ $OS_NAME = "Linux" ]; then
     curl -LSso $HOME/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
     echo 'nginx'
     curl -LSso $HOME/dotfiles/vim/syntax/nginx.vim https://raw.githubusercontent.com/vim-scripts/nginx.vim/master/syntax/nginx.vim
+    echo 'semistandard'
+    cat $HOME/dotfiles/vim/bundle/syntastic/syntax_checkers/javascript/standard.vim | perl -pe 's/standard/semistandard/g' > $HOME/dotfiles/vim/bundle/syntastic/syntax_checkers/javascript/semistandard.vim 
 
     # Set timezone
     if [ "$1" != "quick" ]; then
