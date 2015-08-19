@@ -57,9 +57,9 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding bash completion and colorizing files'
     echo '----------------------------'
     echo 'git-completion'
-    curl -LSso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+    curl -LSso $HOME/dotfiles/bash/scripts/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
     echo 'dircolors.256dark'
-    curl -LSso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
+    curl -LSso $HOME/dotfiles/bash/scripts/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
 
     echo '----------------------------'
     echo 'Adding vim syntax files'
