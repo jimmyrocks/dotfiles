@@ -1,3 +1,5 @@
+-- More tips here: http://phili.pe/posts/postgresql-on-the-command-line/#configuring-psql
+
 \set QUIET 1
 
 \pset null '␀'
