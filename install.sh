@@ -40,7 +40,7 @@ ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 # other
 ln -s $HOME/dotfiles/other/jshintrc $HOME/.jshintrc
 ln -s $HOME/dotfiles/other/tmux.conf $HOME/.tmux.conf
-ln -s $HOME/dotfiles/other/psqlrc $HOME/.psqlrc
+ln -s $HOME/dotfiles/other/psqlrc.sql $HOME/.psqlrc
 # }
 
 # Run an update
