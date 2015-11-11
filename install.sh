@@ -24,6 +24,7 @@ mv $HOME/.vim $HOME/dotfiles/backups/$this_host/$this_date/.vim
 # other files
 mv $HOME/.jshintrc $HOME/dotfiles/backups/$this_host/$this_date/.jshintrc
 mv $HOME/.tmux.confg $HOME/dotfiles/backups/$this_host/$this_date/.tmux.conf
+mv $HOME/.psqlrc $HOME/dotfiles/backups/$this_host/$this_date/.psqlrc
 # }
 
 # CREATE SYMLINKS {
@@ -39,6 +40,7 @@ ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 # other
 ln -s $HOME/dotfiles/other/jshintrc $HOME/.jshintrc
 ln -s $HOME/dotfiles/other/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/other/psqlrc $HOME/.psqlrc
 # }
 
 # Run an update
