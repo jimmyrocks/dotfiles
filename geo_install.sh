@@ -1,5 +1,6 @@
 script_pwd=`pwd`
 install_esri='false'
+config_params='--with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=/usr/bin/curl-config'
 mkdir -p $HOME/tmp
 echo '---------------------------'
 echo 'Installing gdal with FileGDB Support'
@@ -26,6 +27,8 @@ if [ $install_esri == "true" ]; then
     echo "/usr/local/FileGDB_API/lib" >> /etc/ld.so.conf
     ldconfig
   fi
+   # Add the line to the config
+   config_params=$config_params" --with-fgdb=/usr/local/FileGDB_API"
 fi
 echo '---------------------------'
 echo 'Installing gdal'
@@ -37,8 +40,7 @@ svn checkout https://svn.osgeo.org/gdal/trunk/gdal $HOME/tmp/gdal
 # You can also download it from here: (will update this later)
 #    http://download.osgeo.org/gdal/CURRENT/gdal-1.11.1.tar.gz
 cd $HOME/tmp/gdal
-./configure --with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=/usr/bin/curl-config
-# --with-fgdb=/usr/local/FileGDB_API
+./configure $config_params
 make
 make install
 ldconfig
