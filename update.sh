@@ -4,7 +4,7 @@ git submodule init
 git submodule update --init --recursive
 git submodule foreach git pull --recurse-submodules origin master
 
-BASE_DIR=`dirname $0`
+BASE_DIR=$( cd $(dirname $0) ; pwd -P )
 
 OS_NAME=`uname -s`
 if [ $OS_NAME = "Linux" ]; then
@@ -41,8 +41,8 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------'
     pip install Distribute --upgrade
     pip install flake8 --upgrade
-    mkdir -p $BASE_DIR/dotfiles/vim/bundle/tern_for_vim/node_modules
-    npm --prefix $BASE_DIR/dotfiles/vim/bundle/tern_for_vim/ install
+    mkdir -p $BASE_DIR/vim/bundle/tern_for_vim/node_modules
+    npm --prefix $BASE_DIR/vim/bundle/tern_for_vim/ install
 
     # get node.js stuff for jshint
     echo '-------------'
@@ -59,22 +59,22 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding bash completion and colorizing files'
     echo '----------------------------'
     echo 'git-completion'
-    curl -LSso $BASE_DIR/dotfiles/bash/scripts/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    curl -LSso $BASE_DIR/bash/scripts/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
     echo 'dircolors.256dark'
-    curl -LSso $BASE_DIR/dotfiles/bash/scripts/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+    curl -LSso $BASE_DIR/bash/scripts/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
 
     echo '----------------------------'
     echo 'Adding vim syntax files'
     echo '----------------------------'
-    mkdir -p $BASE_DIR/dotfiles/vim/syntax
+    mkdir -p $BASE_DIR/vim/syntax
     echo 'Python'
-    curl -LSso $BASE_DIR/dotfiles/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
+    curl -LSso $BASE_DIR/vim/syntax/python.vim https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim
     echo 'Carto'
-    curl -LSso $BASE_DIR/dotfiles/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
+    curl -LSso $BASE_DIR/vim/syntax/carto.vim https://raw.githubusercontent.com/mapbox/carto/master/build/vim-carto/syntax/carto.vim
     echo 'nginx'
-    curl -LSso $BASE_DIR/dotfiles/vim/syntax/nginx.vim https://raw.githubusercontent.com/vim-scripts/nginx.vim/master/syntax/nginx.vim
+    curl -LSso $BASE_DIR/vim/syntax/nginx.vim https://raw.githubusercontent.com/vim-scripts/nginx.vim/master/syntax/nginx.vim
     echo 'semistandard'
-    cat $BASE_DIR/dotfiles/vim/bundle/syntastic/syntax_checkers/javascript/standard.vim | perl -pe 's/standard/semistandard/g' > $BASE_DIR/dotfiles/vim/bundle/syntastic/syntax_checkers/javascript/semistandard.vim 
+    cat $BASE_DIR/vim/bundle/syntastic/syntax_checkers/javascript/standard.vim | perl -pe 's/standard/semistandard/g' > $BASE_DIR/vim/bundle/syntastic/syntax_checkers/javascript/semistandard.vim 
 
     # Set timezone
     if [ "$1" != "quick" ]; then
