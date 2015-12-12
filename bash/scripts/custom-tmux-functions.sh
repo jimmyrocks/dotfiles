@@ -1,8 +1,10 @@
 function tmux.new(){
+  # Creates a new session with the specified new
   tmux.l new $1
 }
 
 function tmux.s(){
+# Switches to an existing session (somewhat redundant)
   tmux.l 0 $1
 }
 
