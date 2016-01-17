@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-jsformat"]
 	path = vim/bundle/vim-jsformat
 	url = https://github.com/jimmyrocks/vim-jsformat.git
+[submodule "vim/bundle/file-line"]
+	path = vim/bundle/file-line
+	url = https://github.com/bogado/file-line.git
