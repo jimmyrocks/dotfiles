@@ -175,10 +175,12 @@
       \ 'link': 'some_bad_symbolic_links',
       \ }
 
-    " Easy Motion
-    "  JK motions: Line motions
-      map <Leader>j <Plug>(easymotion-j)
-      map <Leader>k <Plug>(easymotion-k)
+    "Delays when using escape key in terminal
+    " https://github.com/mhinz/vim-galore#delays-when-using-escape-key-in-terminal
+    set timeout           " for mappings
+    set timeoutlen=1000   " default value
+    set ttimeout          " for key codes
+    set ttimeoutlen=10    " unnoticeable small value
 
     " Keep yankring files in the dotfiles directory (this needs a
     " cooresponding gitignore unless you are working on completely open source
