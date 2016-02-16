@@ -13,7 +13,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding packages'
     echo '---------------'
     apt-get install -y python-software-properties
-    add-apt-repository -y ppa:chris-lea/node.js
+    # add-apt-repository -y ppa:chris-lea/node.js
     add-apt-repository -y ppa:git-core/ppa
 
     echo '---------------------------'
