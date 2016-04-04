@@ -6,6 +6,9 @@
     set t_Co=256
     set omnifunc=syntaxcomplete#Complete "Turn on OmniCompletion
 
+    " http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+    set complete-=i
+
     scriptencoding utf-8
     set encoding=utf-8
 
