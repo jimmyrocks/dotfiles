@@ -89,6 +89,7 @@
     %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     alias git.cm='git commit -m'
     alias git.cam='git commit -am'
+    alias git.name='basename `git rev-parse --show-toplevel`'
     alias git.s='git status'
     alias git.d='git diff'
     alias git.='echo -e $__bash_green"git. shortcuts / commands
@@ -101,6 +102,7 @@
     "$__bash_cyan"git.l2"$__bash_red" = "$__bash_yellow"git log summary
     "$__bash_cyan"git.cm"$__bash_red" = "$__bash_yellow"git commit -m
     "$__bash_cyan"git.cam"$__bash_red" = "$__bash_yellow"git commit -am
+    "$__bash_cyan"git.name"$__bash_red" = "$__bash_yellow"basename `git rev-parse --show-toplevel`
     "$__bash_cyan"git.s"$__bash_red" = "$__bash_yellow"git status
     "$__bash_cyan"git.d"$__bash_red" = "$__bash_yellow"git diff
     "$__bash_cyan"git.adc"$__bash_red" = "$__bash_yellow"git add [FILE], shows diff, prompts for message
