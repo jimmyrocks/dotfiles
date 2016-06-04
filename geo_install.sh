@@ -35,7 +35,7 @@ echo 'Installing gdal'
 echo '---------------------------'
 # Get gdal!
 sudo apt-get remove gdal-bin #In case you have an older verion
-sudo apt-get -y install libsqlite3-dev libspatialite-dev libspatialite5 libpq-dev libpq5 libcurl3 subversion libcurl4-gnutls-dev
+sudo apt-get -y install libsqlite3-dev libspatialite-dev libspatialite5 libpq-dev libpq5 libcurl3 subversion libcurl4-gnutls-dev python-all-dev
 svn checkout https://svn.osgeo.org/gdal/trunk/gdal $HOME/tmp/gdal
 # You can also download it from here: (will update this later)
 #    http://download.osgeo.org/gdal/CURRENT/gdal-1.11.1.tar.gz
