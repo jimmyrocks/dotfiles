@@ -1,6 +1,6 @@
 script_pwd=`pwd`
 install_esri='false'
-config_params='--with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=/usr/bin/curl-config'
+config_params='--with-geos=yes --with-sqlite3 --with-spatialite --with-postgres --with-odbc --with-curl=/usr/bin/curl-config  --with-python'
 mkdir -p $HOME/tmp
 echo '---------------------------'
 echo 'Installing gdal with FileGDB Support'
