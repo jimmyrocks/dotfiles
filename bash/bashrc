@@ -93,6 +93,10 @@
     fi
 # }
 
+# nvm {
+    nvm use default
+# }
+
 # flex {
     export PATH=/opt/flex/bin:$PATH
 # }
