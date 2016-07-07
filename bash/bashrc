@@ -94,7 +94,7 @@
 # }
 
 # nvm {
-    nvm use default
+    # nvm use default
 # }
 
 # flex {
