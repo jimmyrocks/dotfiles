@@ -21,8 +21,10 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------------------'
     apt-get -y update
     apt-get -y upgrade
-    apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments
+    apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments ntp
     apt-get autoremove -y
+    # update pip
+    pip install -U pip
 
     echo '----------------'
     echo 'Setting up git'
