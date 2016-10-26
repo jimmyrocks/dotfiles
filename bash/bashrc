@@ -108,6 +108,7 @@
 
 # TMUX {
   export TERM="xterm-256color"
+  export NCURSES_NO_UTF8_ACS=1
   if [[ `tmux list-sessions 2>/dev/null` != "" ]]; then
     if [ -z "$TMUX" ]; then
       echo "There are tmux sessions running"
