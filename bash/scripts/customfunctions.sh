@@ -66,9 +66,13 @@ function serveHttp {
   else
     port=$1
   fi
+
+  if hash gdate 2>/dev/null; then
+    http-server "`pwd`" -p $port
+  else
+    python -m SimpleHTTPServer $port
+  fi
   thisip
-  http-server "`pwd`" -p $port
-  #python -m SimpleHTTPServer $1
 }
 
 function thisip {
