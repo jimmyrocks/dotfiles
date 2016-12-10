@@ -89,7 +89,9 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------------------'
     echo 'Updating the system clock'
     echo '----------------------------'
-    ntpdate pool.ntp.org
+    service ntp stop
+    ntpd -gq
+    service ntp start
 fi
 
 echo '------------------------'
