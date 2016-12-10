@@ -67,7 +67,7 @@ function serveHttp {
     port=$1
   fi
 
-  if hash gdate 2>/dev/null; then
+  if hash http-server 2>/dev/null; then
     http-server "`pwd`" -p $port
   else
     python -m SimpleHTTPServer $port
