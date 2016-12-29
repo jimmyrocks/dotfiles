@@ -17,7 +17,7 @@
     syntax enable
 
     set background=dark
-    " solarized options 
+    " solarized options
     let g:solarized_termtrans = 1
     let g:solarized_termcolors = 256
     let g:vim_json_syntax_conceal = 0
@@ -50,7 +50,7 @@
 
     " Show Whitespace
     set list
-    set listchars=eol:¶,tab:»·,trail:ˍ,extends:›,precedes:‹ " Some other good chars (˷˽)
+    set listchars=eol:¶,tab:»·,trail:˽,extends:›,precedes:‹ " Some other good chars (˷˽ˍ)
     hi SpecialText ctermfg=235 ctermbg=NONE cterm=NONE
     hi NonText ctermfg=235 ctermbg=NONE cterm=NONE
 
@@ -103,6 +103,10 @@
     set backspace=indent,eol,start
     " set textwidth=79
     set tabstop=8
+
+    " Python {
+      au FileType python setl sw=4 sts=4
+    " }
 " }
  
 " nerdtree {
@@ -162,6 +166,9 @@
     autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
     autocmd FileType mss vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
     autocmd FileType mss nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+    autocmd FileType python vnoremap <buffer> <c-f> :call RangePythonFormat()<cr>
+    autocmd FileType python nnoremap <buffer> <c-f> :call PythonFormat()<cr>
+
 
     "Filetypes
     au BufRead,BufNewFile *.mss set filetype=carto
