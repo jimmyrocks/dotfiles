@@ -168,6 +168,11 @@
     autocmd FileType mss nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
     autocmd FileType python vnoremap <buffer> <c-f> :call RangePythonFormat()<cr>
     autocmd FileType python nnoremap <buffer> <c-f> :call PythonFormat()<cr>
+    autocmd FileType python vnoremap <buffer> <Leader>f :call RangePythonFormatAggressive()<cr>
+    autocmd FileType python nnoremap <buffer> <Leader>f :call PythonFormatAggressive()<cr>
+    autocmd FileType python vnoremap <buffer> <Leader>F :call RangePythonFormatExtraAggressive()<cr>
+    autocmd FileType python nnoremap <buffer> <Leader>F :call PythonFormatExtraAggressive()<cr>
+
 
 
     "Filetypes
