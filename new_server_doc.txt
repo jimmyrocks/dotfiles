@@ -11,9 +11,9 @@ sudo passwd $user
 sudo adduser $user sudo
 
 # add the key to:
-mkdir -p /home/$user/.ssh/
+sudo mkdir -p /home/$user/.ssh/
 sudo chown -R $user:$user /home/$user
-/home/$user/.ssh/authorized_keys
+sudo touch /home/$user/.ssh/authorized_keys
 sudo chown $user:$user  /home/$user/.ssh/authorized_keys
 
 # Change your shell to bash
