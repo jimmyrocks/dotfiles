@@ -21,7 +21,9 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------------------'
     apt-get -y update
     apt-get -y upgrade
-    apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments ntp python-autopep8
+    apt-get install -y vim tmux git git-core exuberant-ctags python-pip \
+      python-setuptools g++ curl libssl-dev apache2-utils make nodejs npm \
+      curl python-pygments ntp python-autopep8
     apt-get autoremove -y
     # update pip
     pip install -U pip
