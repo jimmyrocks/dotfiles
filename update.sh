@@ -65,6 +65,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------------------'
     echo 'git-completion'
     curl -LSso $BASE_DIR/bash/scripts/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    curl -LSso $BASE_DIR/bash/scripts/git-prompt.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
     echo 'dircolors.256dark'
     curl -LSso $BASE_DIR/bash/scripts/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
 
