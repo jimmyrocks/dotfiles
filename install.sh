@@ -23,6 +23,7 @@ mv $HOME/.vim $HOME/dotfiles/backups/$this_host/$this_date/.vim
 #
 # other files
 mv $HOME/.jshintrc $HOME/dotfiles/backups/$this_host/$this_date/.jshintrc
+mv $HOME/.eslintrc.js $HOME/dotfiles/backups/$this_host/$this_date/.eslintrc.js
 mv $HOME/.tmux.confg $HOME/dotfiles/backups/$this_host/$this_date/.tmux.conf
 mv $HOME/.psqlrc $HOME/dotfiles/backups/$this_host/$this_date/.psqlrc
 # }
@@ -39,6 +40,7 @@ ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 #
 # other
 ln -s $HOME/dotfiles/other/jshintrc $HOME/.jshintrc
+ln -s $HOME/dotfiles/other/eslintrc.js $HOME/.eslintrc.js
 ln -s $HOME/dotfiles/other/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/other/psqlrc.sql $HOME/.psqlrc
 # }
