@@ -1,6 +1,7 @@
 #.bashrc file
 #
 # commandPrompt {
+    source $HOME/dotfiles/bash/scripts/git-prompt.bash # Git tab completion
     source $HOME/dotfiles/bash/scripts/git-completion.bash # Git tab completion
     [ -z "$PS1" ] && return # If not running interactively, don't do anything
 

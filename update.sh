@@ -21,7 +21,9 @@ if [ $OS_NAME = "Linux" ]; then
     echo '---------------------------'
     apt-get -y update
     apt-get -y upgrade
-    apt-get install -y vim tmux git git-core exuberant-ctags python-pip python-setuptools g++ curl libssl-dev apache2-utils make nodejs curl python-pygments ntp python-autopep8
+    apt-get install -y vim tmux git git-core exuberant-ctags python-pip \
+      python-setuptools g++ curl libssl-dev apache2-utils make nodejs npm \
+      curl python-pygments ntp python-autopep8
     apt-get autoremove -y
     # update pip
     pip install -U pip
@@ -52,6 +54,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding nodejs tools'
     echo '-------------'
     npm install --global jshint
+    npm install --global eslint
     npm install --global jsonlint
     npm install --global ext
     npm install --global jquery
@@ -63,6 +66,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------------------'
     echo 'git-completion'
     curl -LSso $BASE_DIR/bash/scripts/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    curl -LSso $BASE_DIR/bash/scripts/git-prompt.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
     echo 'dircolors.256dark'
     curl -LSso $BASE_DIR/bash/scripts/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
 
