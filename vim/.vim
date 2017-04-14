@@ -1,1 +1,1 @@
-/home/jim/dotfiles/vim
+/home/jmcandrew/dotfiles/vim
