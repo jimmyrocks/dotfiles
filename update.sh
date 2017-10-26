@@ -15,16 +15,20 @@ if [ $OS_NAME = "Linux" ]; then
     apt-get install -y python-software-properties
     # add-apt-repository -y ppa:chris-lea/node.js
     add-apt-repository -y ppa:git-core/ppa
+    add-apt-repository -y ppa:pi-rho/dev
 
     echo '---------------------------'
     echo 'Updating and Installing Software'
     echo '---------------------------'
     apt-get -y update
     apt-get -y upgrade
-    apt-get install -y vim tmux git git-core exuberant-ctags python-pip \
+    apt-get install -y vim tmux-next git git-core exuberant-ctags python-pip \
       python-setuptools g++ curl libssl-dev apache2-utils make nodejs npm \
       curl python-pygments ntp python-autopep8
     apt-get autoremove -y
+
+    sudo rm /usr/bin/tmux
+    sudo ln -s $(which tmux-next) /usr/bin/tmux
     # update pip
     pip install -U pip
 
