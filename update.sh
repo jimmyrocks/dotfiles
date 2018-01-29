@@ -59,6 +59,8 @@ if [ $OS_NAME = "Linux" ]; then
     echo '-------------'
     npm install --global jshint
     npm install --global eslint
+    npm install --global typescript
+    npm install --global tslint
     npm install --global jsonlint
     npm install --global ext
     npm install --global jquery
