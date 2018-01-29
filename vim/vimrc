@@ -228,6 +228,7 @@
     let g:syntastic_check_on_wq = 0
     " let g:syntastic_javascript_checkers = ['semistandard']
     let g:syntastic_javascript_checkers = ['eslint']
+    let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 
     "Signify
     let g:signify_vcs_list = [ 'git' ]
