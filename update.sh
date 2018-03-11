@@ -31,6 +31,7 @@ if [ $OS_NAME = "Linux" ]; then
     sudo ln -s $(which tmux-next) /usr/bin/tmux
     # update pip
     pip install -U pip
+    chown -R `whoami`:`whoami` ~/.cache/pip
 
     echo '----------------'
     echo 'Setting up git'
