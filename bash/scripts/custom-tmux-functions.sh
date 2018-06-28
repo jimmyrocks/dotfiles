@@ -58,9 +58,9 @@ function tmux.l(){
   if [[ -z "$display_only" ]]; then
     if [[ -n "$session_name" ]]; then
       if [ -z "$TMUX" ]; then
-        tmux attach -t "$session_name"
+        tmux -u attach -t "$session_name"
       else
-        tmux switch-client -t "$session_name"
+        tmux -u switch-client -t "$session_name"
       fi
     else
       echo 'No session selected, type tmux.l to get this menu again'
