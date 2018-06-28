@@ -15,20 +15,35 @@ if [ $OS_NAME = "Linux" ]; then
     apt-get install -y python-software-properties
     # add-apt-repository -y ppa:chris-lea/node.js
     add-apt-repository -y ppa:git-core/ppa
-    add-apt-repository -y ppa:pi-rho/dev
+
+    # Add tmux-next if it's supported through the PPA
+    # Supported versions can be found here:
+    #   https://launchpad.net/~pi-rho/+archive/ubuntu/dev
+    TMUX_NAME="tmux-next"
+    UBUNTU_VERSION=`lsb_release -r -s`
+    echo $UBUNTU_VERSION
+    TMUX_CMD="add-apt-repository -y ppa:pi-rho/dev"
+    if [[ "$UBUNTU_VERSION" = @(17.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
+      $TMUX_CMD
+    else
+      TMUX_NAME="tmux"
+    fi
 
     echo '---------------------------'
     echo 'Updating and Installing Software'
     echo '---------------------------'
     apt-get -y update
     apt-get -y upgrade
-    apt-get install -y vim tmux-next git git-core exuberant-ctags python-pip \
+    apt-get install -y vim $TMUX_NAME git git-core exuberant-ctags python-pip \
       python-setuptools g++ curl libssl-dev apache2-utils make nodejs npm \
       curl python-pygments ntp python-autopep8
     apt-get autoremove -y
 
-    sudo rm /usr/bin/tmux
-    sudo ln -s $(which tmux-next) /usr/bin/tmux
+    # If we're using tmux-next link that to tmux
+    if [ "$TMUX_NAME" != "tmux" ]; then
+      rm /usr/bin/tmux
+      ln -s $(which $TMUX_NAME) /usr/bin/tmux
+    fi
     # update pip
     mkdir -p ~/.cache/pip
     chown -R `whoami`:`whoami` ~/.cache/pip
