@@ -160,6 +160,10 @@
     autocmd FileType javascript nnoremap <buffer>  <Leader>f :call JsFormat()<cr>
     autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr> :call RangeJsFormat()<cr>
     autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr> :call JsFormat()<cr>
+    autocmd FileType json vnoremap <buffer>  <Leader>f :call RangeJsonFormat()<cr> 
+    autocmd FileType json nnoremap <buffer>  <Leader>f :call JsonFormat()<cr>
+    autocmd FileType json vnoremap <buffer>  <c-f> :call RangeJsonBeautify()<cr> :call RangeJsFormat()<cr>
+    autocmd FileType json nnoremap <buffer>  <c-f> :call JsonBeautify()<cr> :call JsFormat()<cr>
     autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
     autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
     autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
