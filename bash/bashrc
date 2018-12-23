@@ -3,28 +3,29 @@
 # commandPrompt {
     source $HOME/dotfiles/bash/scripts/git-prompt.bash # Git tab completion
     source $HOME/dotfiles/bash/scripts/git-completion.bash # Git tab completion
-    [ -z "$PS1" ] && return # If not running interactively, don't do anything
+    if [ -z "$PS1" ]; then # If not running interactively, don't do anything
 
-    # Determine if we're using Darwin or Linux, and set the color prompt accordingly
-    OS_NAME=`uname -s`
-    if [ "$OS_NAME" == "Darwin" ]; then
-        # Darwin / OSX Config
-        function parse_git_branch () {
-            git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
-        }
-        PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]§ '
-        alias ls='ls -G' # Color LS uses -G on OSX
-        __bash_color_prefix='\033'
-    else
-        # Unix / Ubuntu Settings
-        if [ -z "$TMUX" ]; then 
-            PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
-       else
-            TMUX_SESSION=`tmux list-panes | grep active | sed s/:.*//g`
-            PS1='\u[$TMUX_SESSION]:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ '
-        fi
-        alias ls='ls --color'
-        __bash_color_prefix='\e'
+      # Determine if we're using Darwin or Linux, and set the color prompt accordingly
+      OS_NAME=`uname -s`
+      if [ "$OS_NAME" == "Darwin" ]; then
+          # Darwin / OSX Config
+          function parse_git_branch () {
+              git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
+          }
+          PS1='\u@\h:\w\[\033[34m\]$(parse_git_branch "%s")\[\033[00m\]§ '
+          alias ls='ls -G' # Color LS uses -G on OSX
+          __bash_color_prefix='\033'
+      else
+          # Unix / Ubuntu Settings
+          if [ -z "$TMUX" ]; then 
+              PS1='\u@\h:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ ' # Show git branch in status
+         else
+              TMUX_SESSION=`tmux list-panes | grep active | sed s/:.*//g`
+              PS1='\u[$TMUX_SESSION]:\w$(__git_ps1 "\[\e[34m\][%s]\[\e[0m\]")§ '
+          fi
+          alias ls='ls --color'
+          __bash_color_prefix='\e'
+      fi
     fi
 # }
 
