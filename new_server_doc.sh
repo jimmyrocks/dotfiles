@@ -1,4 +1,4 @@
-er= Creating an SSH Key (from https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html)
+# Creating an SSH Key (from https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html)
 # If you don't have an existing SSH key that you wish to use, generate one as follows:
 # * Open a terminal on your local computer and enter the following: ssh-keygen -t rsa -C "your_email@example.com" ...
 # * Just press <Enter> to accept the default location and file name.
@@ -34,6 +34,14 @@ echo "" > ~/.ssh/authorized_keys
 # 
 # PasswordAuthentication no
 # 
+# #######
+# SFTP on AWS Ubuntu
+# 
+# Find the line: Subsystem»····sftp»···/usr/lib/openssh/sftp-server
+# And replace it with: Subsystem sftp internal-sftp
+#
+# ######
+
 sudo service ssh restart
 
 # now your server is secure!
