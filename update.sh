@@ -23,11 +23,11 @@ if [ $OS_NAME = "Linux" ]; then
     UBUNTU_VERSION=`lsb_release -r -s`
     echo $UBUNTU_VERSION
     TMUX_CMD="add-apt-repository -y ppa:pi-rho/dev"
-    if [[ "$UBUNTU_VERSION" = @(17.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
+    # if [[ "$UBUNTU_VERSION" = @(17.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
       $TMUX_CMD
-    else
-      TMUX_NAME="tmux"
-    fi
+    # else
+      # TMUX_NAME="tmux"
+    # fi
 
     echo '---------------------------'
     echo 'Updating and Installing Software'
