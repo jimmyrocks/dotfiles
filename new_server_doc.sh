@@ -1,3 +1,4 @@
+exit
 # Creating an SSH Key (from https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html)
 # If you don't have an existing SSH key that you wish to use, generate one as follows:
 # * Open a terminal on your local computer and enter the following: ssh-keygen -t rsa -C "your_email@example.com" ...
