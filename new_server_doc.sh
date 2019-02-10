@@ -21,7 +21,10 @@ sudo usermod -s /bin/bash root
 sudo usermod -s /bin/bash $user
 
 # remove keys from root
-echo "" > ~/.ssh/authorized_keys
+# This is commented out so you don't accidentally run it
+# It will make it so your user can't log in
+#
+# echo "" > ~/.ssh/authorized_keys
 
 # log in as #user to make sure the rsa works
 # Make it so you can't log in with passwords
