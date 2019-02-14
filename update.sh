@@ -13,6 +13,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo 'Adding packages'
     echo '---------------'
     apt-get install -y python-software-properties
+    apt-get install -y software-properties-common
     # add-apt-repository -y ppa:chris-lea/node.js
     add-apt-repository -y ppa:git-core/ppa
 
@@ -24,9 +25,9 @@ if [ $OS_NAME = "Linux" ]; then
     echo $UBUNTU_VERSION
     TMUX_CMD="add-apt-repository -y ppa:pi-rho/dev"
     # if [[ "$UBUNTU_VERSION" = @(17.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
-      $TMUX_CMD
+      # $TMUX_CMD
     # else
-      # TMUX_NAME="tmux"
+      TMUX_NAME="tmux"
     # fi
 
     echo '---------------------------'
