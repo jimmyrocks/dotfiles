@@ -87,6 +87,7 @@
     # Other tools
     source $HOME/dotfiles/bash/scripts/custom-git-functions.sh
     source $HOME/dotfiles/bash/scripts/custom-tmux-functions.sh
+    source $HOME/dotfiles/bash/scripts/custom-docker-functions.sh
 # }
 
 # rvm {
