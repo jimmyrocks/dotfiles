@@ -1,6 +1,7 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	ignore = dirty
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -39,6 +40,7 @@
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify.git
+	ignore = dirty
 [submodule "vim/bundle/tmuxline.vim"]
 	path = vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim

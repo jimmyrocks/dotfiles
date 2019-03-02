@@ -27,7 +27,7 @@ if [ $OS_NAME = "Linux" ]; then
       $TMUX_CMD
     else
       TMUX_NAME="tmux"
-    # fi
+    fi
 
     echo '---------------------------'
     echo 'Updating and Installing Software'
@@ -64,6 +64,7 @@ if [ $OS_NAME = "Linux" ]; then
     echo '----------------'
     echo 'Adding vim tools'
     echo '----------------'
+    pip install --upgrade pip
     pip install Distribute --upgrade
     pip install flake8 --upgrade
     pip install --upgrade autopep8

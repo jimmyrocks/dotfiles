@@ -4,7 +4,8 @@
     source $HOME/dotfiles/bash/scripts/git-prompt.bash # Git tab completion
     source $HOME/dotfiles/bash/scripts/git-completion.bash # Git tab completion
     export __bash_color_prefix='\e'
-    if [ -z "$PS1" ]; then # If not running interactively, don't do anything
+    # This is commented out, because PS1 is now set earlier
+    # if [ -z "$PS1" ]; then # If not running interactively, don't do anything
 
       # Determine if we're using Darwin or Linux, and set the color prompt accordingly
       OS_NAME=`uname -s`
@@ -27,7 +28,7 @@
           alias ls='ls --color'
           __bash_color_prefix='\e'
       fi
-    fi
+    # fi
 # }
 
 # customFunctions {
@@ -87,6 +88,7 @@
     # Other tools
     source $HOME/dotfiles/bash/scripts/custom-git-functions.sh
     source $HOME/dotfiles/bash/scripts/custom-tmux-functions.sh
+    source $HOME/dotfiles/bash/scripts/custom-docker-functions.sh
 # }
 
 # rvm {
