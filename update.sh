@@ -7,7 +7,6 @@ git submodule foreach git pull --recurse-submodules origin master
 BASE_DIR=$( cd $(dirname $0) ; pwd -P )
 
 OS_NAME=`uname -s`
-if [ $OS_NAME = "Linux" ]; then
     # http://stackoverflow.com/questions/16302436/install-nodejs-on-ubuntu-12-10
     echo '---------------'
     echo 'Adding packages'
@@ -121,7 +120,6 @@ if [ $OS_NAME = "Linux" ]; then
     service ntp stop
     ntpd -gq
     service ntp start
-fi
 
 echo '------------------------'
 echo 'Everything is up to date'
