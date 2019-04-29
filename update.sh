@@ -7,35 +7,33 @@ git submodule foreach git pull --recurse-submodules origin master
 BASE_DIR=$( cd $(dirname $0) ; pwd -P )
 
 OS_NAME=`uname -s`
-    # http://stackoverflow.com/questions/16302436/install-nodejs-on-ubuntu-12-10
     echo '---------------'
     echo 'Adding packages'
     echo '---------------'
-    apt-get install -y python-software-properties
-    # add-apt-repository -y ppa:chris-lea/node.js
     add-apt-repository -y ppa:git-core/ppa
 
     # Add tmux-next if it's supported through the PPA
     # Supported versions can be found here:
     #   https://launchpad.net/~pi-rho/+archive/ubuntu/dev
     TMUX_NAME="tmux-next"
-    UBUNTU_VERSION=`lsb_release -r -s`
-    echo $UBUNTU_VERSION
+    UBUNTU_VERSION=`lsb_release -rs`
     TMUX_CMD="add-apt-repository -y ppa:pi-rho/dev"
-    if [[ "$UBUNTU_VERSION" = @(18.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
+    if [[ "$UBUNTU_VERSION" = @(18.04|18.10.1|15.04.1|17.04.1|12.04.1|14.04.1|16.04.1|17.10.1) ]] ; then
       $TMUX_CMD
+      apt-get install -y software-properties-common
     else
       TMUX_NAME="tmux"
+      apt-get install -y python-software-properties
     fi
 
     echo '---------------------------'
     echo 'Updating and Installing Software'
     echo '---------------------------'
     apt-get -y update
-    apt-get -y upgrade
-    apt-get install -y vim $TMUX_NAME git git-core exuberant-ctags python-pip \
+    #apt-get -y upgrade
+    apt-get install -y vim $TMUX_NAME git exuberant-ctags python-pip \
       python-setuptools g++ curl libssl-dev apache2-utils make nodejs npm \
-      curl python-pygments ntp python-autopep8
+      python-pygments ntp python-autopep8
     apt-get autoremove -y
 
     # If we're using tmux-next link that to tmux
