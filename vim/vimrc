@@ -43,6 +43,9 @@
     vnoremap <c-j> :m '>+1<CR>gv=gv
     vnoremap <c-k> :m '<-2<CR>gv=gv
 
+    " Shift-Enter for escape
+    inoremap <S-CR> <Esc>
+
     set ruler "show where we are
     set laststatus=2 "display the status line always
     set cmdheight=2 "two lines at the bottom, to keep things from getting hidden
