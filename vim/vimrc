@@ -205,6 +205,14 @@
     set ttimeout          " for key codes
     set ttimeoutlen=10    " unnoticeable small value
 
+    " https://github.com/vim/vim/issues/2258
+    if &term =~ "screen"
+      let &t_BE = "\e[?2004h"
+      let &t_BD = "\e[?2004l"
+      exec "set t_PS=\e[200~"
+      exec "set t_PE=\e[201~"
+    endif
+
     " Keep yankring files in the dotfiles directory (this needs a
     " cooresponding gitignore unless you are working on completely open source
     " stuff!
