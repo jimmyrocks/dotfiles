@@ -11,6 +11,9 @@ sudo adduser $user
 sudo passwd $user
 sudo adduser $user sudo
 
+# centos
+# sudo usermod -aG wheel $user
+
 # add the key to:
 sudo mkdir -p /home/$user/.ssh/
 sudo chown -R $user:$user /home/$user
